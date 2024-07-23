@@ -14,7 +14,7 @@ struct ContentView: View {
             Button("Modal") {
                 presentSheet = true
             }
-            .navigationTitle("Main")
+            .navigationTitle("Config")
         }.sheet(isPresented: $presentSheet) {
             SheetView()
             
@@ -36,7 +36,7 @@ struct SheetView: View {
                       Button(action: {
                           selectedButton = 1
                       }) {
-                          Text("Button 1")
+                          Text("Action")
                               .frame(maxWidth: .infinity)
                               .padding()
                               .background(Color.black.opacity(0.3))
@@ -51,7 +51,7 @@ struct SheetView: View {
                       Button(action: {
                           selectedButton = 2
                       }) {
-                          Text("Button 2")
+                          Text("Sensitivity")
                               .frame(maxWidth: .infinity)
                               .padding()
                               .background(Color.black.opacity(0.3))
