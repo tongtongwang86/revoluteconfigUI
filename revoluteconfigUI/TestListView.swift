@@ -95,6 +95,7 @@ struct ReportListView_Previews: PreviewProvider {
         ReportListView()
     }
 }
+
 struct SearchBar: View {
     @Binding var searchText: String
     @Binding var selectedScope: String?
@@ -105,6 +106,9 @@ struct SearchBar: View {
     var body: some View {
         VStack {
             HStack {
+                Image(systemName: "magnifyingglass")
+                    .foregroundColor(.gray)
+                
                 TextField("Search...", text: $searchText, onEditingChanged: { isEditing in
                     withAnimation {
                         self.isEditing = isEditing
@@ -112,6 +116,7 @@ struct SearchBar: View {
                 })
                 .textFieldStyle(RoundedBorderTextFieldStyle())
                 .padding(.leading)
+                
                 
                 if isEditing {
                     Button("Clear") {
@@ -123,6 +128,7 @@ struct SearchBar: View {
                         }
                     }
                     .padding(.trailing)
+                    .transition(.move(edge: .trailing).combined(with: .opacity).combined(with: .scale(0.3, anchor: UnitPoint(x: 0, y: 0))))
                 }
             }
             .padding()
@@ -135,7 +141,7 @@ struct SearchBar: View {
                 }
                 .pickerStyle(SegmentedPickerStyle())
                 .padding(.horizontal)
-                .transition(.move(edge: .top).combined(with: .opacity))
+                .transition(.move(edge: .top).combined(with: .opacity).combined(with: .scale(0.8, anchor: UnitPoint(x: 0, y: 0))))
             }
         }
     }
