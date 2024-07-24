@@ -126,20 +126,88 @@ class HapticFeedbackManager {
 }
 
 import SwiftUI
+import CoreBluetooth
 
 struct ContentView: View {
+    @ObservedObject var bluetoothManager = BluetoothManager()
     @Environment(\.colorScheme) var colorScheme
     @State var presentSheet = false
+    @State private var isDeviceConnected = false
+    @State private var selectedPeripheral: CBPeripheral?
     
     var body: some View {
         NavigationView {
             VStack {
                 SquareBoxView()
                 Spacer()
-                Button("Modal") {
-                    presentSheet = true
-                }
-            }
+                
+                
+                
+                Text("Waiting for revolute...")
+                                .font(.title)
+                                .padding(.top, 20)
+
+                            List(bluetoothManager.availableDevices + bluetoothManager.connectedDevices, id: \.identifier) { peripheral in
+                                HStack {
+                                    
+                                    Text(peripheral.name ?? "Unknown Device")
+
+                                    Button(action: {
+                                        selectedPeripheral = peripheral
+                                        presentSheet = true
+                                        if !bluetoothManager.connectedDevices.contains(peripheral) {
+                                            bluetoothManager.connect(to: peripheral)
+                                        }
+                                        HapticFeedbackManager.shared.playImpactFeedback()
+                                    }) {
+                                        Text(bluetoothManager.connectedDevices.contains(peripheral) ? "Open" : "Connect")
+                                            .padding()
+                                            .foregroundColor(.white)
+                                            .background(Color.black.opacity(0.3))
+                                            .cornerRadius(16)
+                                    }
+                                    .buttonStyle(BorderlessButtonStyle())
+                                }
+                            }
+
+                            Button(action: {
+//                                bluetoothManager.startScanning()
+                                bluetoothManager.scanAndRetrievePairedDevices()
+
+                            }) {
+                                Text("Scan for devices")
+                                    .padding()
+                                    .background(Color.blue)
+                                    .foregroundColor(.white)
+                                    .cornerRadius(8)
+                            }
+                            .padding(.top, 20)
+                        }
+                        .onAppear {
+                            bluetoothManager.startScanning()
+                        }
+                        .onChange(of: bluetoothManager.isConnected) { newValue in
+                            isDeviceConnected = newValue
+                            if isDeviceConnected == false {
+                                
+                                presentSheet = false
+                                
+                            }
+                        }
+                        .sheet(isPresented: $presentSheet) {
+                            // Your sheet content here
+                            VStack {
+                                Text("Device Details")
+                                // Add more details or controls as needed
+                            }
+                        }
+            
+            
+            
+            
+            
+            
+            
             .background(
                 VStack {
                     Spacer()
