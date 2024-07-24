@@ -384,6 +384,17 @@ struct RatingView: View {
                         .font(.system(size: 50))
                 }
                 .disabled(rating == minVal)
+                .onPressGesture(
+                    minimumDuration: 0.0,
+                    perform: {
+                        HapticFeedbackManager.shared.playImpactFeedback() // Play haptic feedback on press
+                    },
+                    onPressingChanged: { pressing in
+                        if !pressing {
+                            HapticFeedbackManager.shared.playImpactFeedback() // Play haptic feedback on release
+                        }
+                    }
+                )
                 
                 
                     Text("\(rating)")
@@ -439,9 +450,31 @@ struct RatingView: View {
                         .font(.system(size: 50))
                 }
                 .disabled(rating == maxVal)
+                .onPressGesture(
+                    minimumDuration: 0.0,
+                    perform: {
+                        HapticFeedbackManager.shared.playImpactFeedback() // Play haptic feedback on press
+                    },
+                    onPressingChanged: { pressing in
+                        if !pressing {
+                            HapticFeedbackManager.shared.playImpactFeedback() // Play haptic feedback on release
+                        }
+                    }
+                )
             }
         }
         .padding()
+    }
+}
+
+
+extension View {
+    func onPressGesture(minimumDuration: Double = 0.0, perform action: @escaping () -> Void, onPressingChanged: @escaping (Bool) -> Void) -> some View {
+        self.simultaneousGesture(
+            LongPressGesture(minimumDuration: minimumDuration)
+                .onEnded { _ in action() }
+                .onChanged { pressing in onPressingChanged(pressing) }
+        )
     }
 }
 
@@ -508,17 +541,23 @@ struct ActionView: View {
                     .foregroundColor(.white)
                     .cornerRadius(16)
                     .frame(maxWidth: .infinity) // Make the button span the width of the screen
-                    .background(Color.black.opacity(0.3))
+                    .background(Color(.black).opacity(0.5))
                     .cornerRadius(16)
             }
             .contentShape(Rectangle())
             
             
             TextField("Search", text: $searchText)
-                            .padding(10)
-                            .background(Color(.systemGray5))
-                            .cornerRadius(8)
-                            .padding([.leading, .trailing, .top])
+            
+                .foregroundColor(.white)
+                .padding(.all)
+                .frame(maxWidth: .infinity)
+                .background(Color.black.opacity(0.3))
+                .cornerRadius(16)
+
+//                            .background(Color(.systemGray5))
+//                            .cornerRadius(8)
+//                            .padding([.leading, .trailing, .top])
             
             ScrollView{
                 
@@ -540,13 +579,16 @@ struct ListView: View {
        var items: [String]
        var searchText: String
        
-       var filteredItems: [String] {
-           if searchText.isEmpty {
-               return items
-           } else {
-               return items.filter { $0.lowercased().contains(searchText.lowercased()) }
-           }
-       }
+    var filteredItems: [String] {
+        if searchText.isEmpty {
+            return items
+        } else {
+            let formattedSearchText = searchText.lowercased().replacingOccurrences(of: " ", with: "")
+            return items.filter { item in
+                item.lowercased().replacingOccurrences(of: " ", with: "").contains(formattedSearchText)
+            }
+        }
+    }
     
     var body: some View {
 
