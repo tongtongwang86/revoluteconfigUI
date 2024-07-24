@@ -549,6 +549,7 @@ struct ActionView: View {
             
             TextField("Search", text: $searchText)
             
+            
                 .foregroundColor(.white)
                 .padding(.all)
                 .frame(maxWidth: .infinity)

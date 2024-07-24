@@ -1,0 +1,32 @@
+[
+    {
+        "name": "Report 1",
+        "reportID": [0, 0, 0, 0, 0, 0, 0, 28],
+        "scope": "keyboard",
+        "description": "This is a keyboard report"
+    },
+    {
+        "name": "Report 2",
+        "reportID": [0, 0, 0, 0, 0, 0, 0, 45],
+        "scope": "consumer",
+        "description": "This is a consumer report"
+    },
+    {
+        "name": "Report 3",
+        "reportID": [0, 0, 0, 0, 0, 0, 0, 92],
+        "scope": "mouse",
+        "description": "This is a mouse report"
+    },
+    {
+        "name": "Report 4",
+        "reportID": [0, 0, 0, 0, 0, 0, 0, 15],
+        "scope": "keyboard",
+        "description": "Another keyboard report"
+    },
+    {
+        "name": "Report 5",
+        "reportID": [0, 0, 0, 0, 0, 0, 0, 77],
+        "scope": "consumer",
+        "description": "Another consumer report"
+    }
+]
