@@ -138,7 +138,7 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             VStack {
-                SquareBoxView()
+                SquareBoxView(bluetoothManager: bluetoothManager)
                 Spacer()
                 
                 
@@ -372,7 +372,7 @@ struct SheetView: View {
             if selectedButton == 1 {
                 
 //                ActionView()
-                ReportListView()
+                ReportListView(bluetoothManager: BluetoothManager())
                 
                     .transition(.scale(scale: 0.8, anchor: UnitPoint(x: 0, y: 0)).combined(with: .move(edge: .leading)))
                 
@@ -768,11 +768,12 @@ struct ListView: View {
 
 
 struct SquareBoxView: View {
+    @ObservedObject var bluetoothManager: BluetoothManager
     var body: some View {
         
         SceneViewContainer(
             
-            capRotationY: .constant(Float(213)
+            capRotationY: .constant(Float(bluetoothManager.uint16Value)
 //                .constant(Float(bluetoothManager.uint16Value))
                                    )
         

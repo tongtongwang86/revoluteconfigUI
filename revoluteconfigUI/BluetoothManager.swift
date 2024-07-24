@@ -141,8 +141,41 @@ class BluetoothManager: NSObject, ObservableObject, CBCentralManagerDelegate, CB
         }
     }
 
-    func writeUpReport() {
-        let byteArray: [UInt8] = [0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x1C]
+    func writeModeReport(byteArray: [UInt8]) {
+        let data = Data(byteArray)
+
+        if let peripheral = peripheral, let services = peripheral.services {
+            for service in services {
+                if service.uuid == serviceUUID, let characteristics = service.characteristics {
+                    for characteristic in characteristics {
+                        if characteristic.uuid == writeModeCharacteristicUUID {
+                            peripheral.writeValue(data, for: characteristic, type: .withResponse)
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    
+    func writeDownReport(byteArray: [UInt8]) {
+        let data = Data(byteArray)
+
+        if let peripheral = peripheral, let services = peripheral.services {
+            for service in services {
+                if service.uuid == serviceUUID, let characteristics = service.characteristics {
+                    for characteristic in characteristics {
+                        if characteristic.uuid == writeDownReportCharacteristicUUID {
+                            peripheral.writeValue(data, for: characteristic, type: .withResponse)
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    
+    func writeUpReport(byteArray: [UInt8]) {
         let data = Data(byteArray)
 
         if let peripheral = peripheral, let services = peripheral.services {

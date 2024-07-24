@@ -57,6 +57,7 @@ class ReportViewModel: ObservableObject {
 }
 
 struct ReportListView: View {
+    @ObservedObject var bluetoothManager: BluetoothManager
     @StateObject private var viewModel = ReportViewModel()
     
     var body: some View {
@@ -105,8 +106,32 @@ struct ReportListView: View {
                         
                         Button {
                             // Perform action 1 with report.reportID
-                            print("Action 1 for \(report.reportID)")
+                            
+                            print("Up report written \(report.reportID)")
+                            
+                            if report.scope == "keyboard"{
+                                bluetoothManager.writeModeReport(byteArray: [0x05] )
+                                
+                            }else if report.scope == "mouse"{
+                                bluetoothManager.writeModeReport(byteArray: [0xD] )
+                                
+                                
+                            }else if report.scope == "consumer" {
+                                bluetoothManager.writeModeReport(byteArray: [0x09] )
+                                
+                                
+                                
+                                
+                            }
+                            
+                            bluetoothManager.writeUpReport(byteArray: report.reportID)
                             HapticFeedbackManager.shared.playImpactFeedback()
+                            
+                            
+                            
+                            
+                            
+                            
                         }label: {
                             Image(systemName: "digitalcrown.horizontal.arrow.clockwise")
                         }
@@ -130,7 +155,30 @@ struct ReportListView: View {
                         
                         Button {
                             // Perform action 1 with report.reportID
-                            print("Action 2 for \(report.reportID)")
+                            print("Down report written \(report.reportID)")
+                            
+                            
+                            
+                            if report.scope == "keyboard"{
+                                bluetoothManager.writeModeReport(byteArray: [0x05] )
+                                
+                            }else if report.scope == "mouse"{
+                                bluetoothManager.writeModeReport(byteArray: [0xD] )
+                                
+                                
+                            }else if report.scope == "consumer" {
+                                bluetoothManager.writeModeReport(byteArray: [0x09] )
+                                
+                                
+                                
+                                
+                            }
+                            
+                            bluetoothManager.writeDownReport(byteArray: report.reportID)
+                            
+                            
+                            
+                            
                             HapticFeedbackManager.shared.playImpactFeedback()
                         }label: {
                             Image(systemName: "digitalcrown.horizontal.arrow.counterclockwise")
@@ -175,7 +223,7 @@ struct ReportListView: View {
 
 struct ReportListView_Previews: PreviewProvider {
     static var previews: some View {
-        ReportListView()
+        ReportListView(bluetoothManager: BluetoothManager())
     }
 }
 

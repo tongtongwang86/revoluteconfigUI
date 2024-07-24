@@ -1,9 +1,159 @@
 [
     {
-        "name": "Report 1",
-        "reportID": [0, 0, 0, 0, 0, 0, 0, 28],
+        "name": "HID_KEY_A",
+        "reportID": [0, 0, 0, 0, 0, 0, 0, 0x04],
         "scope": "keyboard",
-        "description": "This is a keyboard report"
+        "description": "Keyboard key A"
+    },
+    {
+        "name": "HID_KEY_B",
+        "reportID": [0, 0, 0, 0, 0, 0, 0, 0x05],
+        "scope": "keyboard",
+        "description": "Keyboard key B"
+    },
+    {
+        "name": "HID_KEY_C",
+        "reportID": [0, 0, 0, 0, 0, 0, 0, 0x06],
+        "scope": "keyboard",
+        "description": "Keyboard key C"
+    },
+    {
+        "name": "HID_KEY_D",
+        "reportID": [0, 0, 0, 0, 0, 0, 0, 0x07],
+        "scope": "keyboard",
+        "description": "Keyboard key D"
+    },
+    {
+        "name": "HID_KEY_E",
+        "reportID": [0, 0, 0, 0, 0, 0, 0, 0x08],
+        "scope": "keyboard",
+        "description": "Keyboard key E"
+    },
+    {
+        "name": "HID_KEY_F",
+        "reportID": [0, 0, 0, 0, 0, 0, 0, 0x09],
+        "scope": "keyboard",
+        "description": "Keyboard key F"
+    },
+    {
+        "name": "HID_KEY_G",
+        "reportID": [0, 0, 0, 0, 0, 0, 0, 0x0A],
+        "scope": "keyboard",
+        "description": "Keyboard key G"
+    },
+    {
+        "name": "HID_KEY_H",
+        "reportID": [0, 0, 0, 0, 0, 0, 0, 0x0B],
+        "scope": "keyboard",
+        "description": "Keyboard key H"
+    },
+    {
+        "name": "HID_KEY_I",
+        "reportID": [0, 0, 0, 0, 0, 0, 0, 0x0C],
+        "scope": "keyboard",
+        "description": "Keyboard key I"
+    },
+    {
+        "name": "HID_KEY_J",
+        "reportID": [0, 0, 0, 0, 0, 0, 0, 0x0D],
+        "scope": "keyboard",
+        "description": "Keyboard key J"
+    },
+    {
+        "name": "HID_KEY_K",
+        "reportID": [0, 0, 0, 0, 0, 0, 0, 0x0E],
+        "scope": "keyboard",
+        "description": "Keyboard key K"
+    },
+    {
+        "name": "HID_KEY_L",
+        "reportID": [0, 0, 0, 0, 0, 0, 0, 0x0F],
+        "scope": "keyboard",
+        "description": "Keyboard key L"
+    },
+    {
+        "name": "HID_KEY_M",
+        "reportID": [0, 0, 0, 0, 0, 0, 0, 0x10],
+        "scope": "keyboard",
+        "description": "Keyboard key M"
+    },
+    {
+        "name": "HID_KEY_N",
+        "reportID": [0, 0, 0, 0, 0, 0, 0, 0x11],
+        "scope": "keyboard",
+        "description": "Keyboard key N"
+    },
+    {
+        "name": "HID_KEY_O",
+        "reportID": [0, 0, 0, 0, 0, 0, 0, 0x12],
+        "scope": "keyboard",
+        "description": "Keyboard key O"
+    },
+    {
+        "name": "HID_KEY_P",
+        "reportID": [0, 0, 0, 0, 0, 0, 0, 0x13],
+        "scope": "keyboard",
+        "description": "Keyboard key P"
+    },
+    {
+        "name": "HID_KEY_Q",
+        "reportID": [0, 0, 0, 0, 0, 0, 0, 0x14],
+        "scope": "keyboard",
+        "description": "Keyboard key Q"
+    },
+    {
+        "name": "HID_KEY_R",
+        "reportID": [0, 0, 0, 0, 0, 0, 0, 0x15],
+        "scope": "keyboard",
+        "description": "Keyboard key R"
+    },
+    {
+        "name": "HID_KEY_S",
+        "reportID": [0, 0, 0, 0, 0, 0, 0, 0x16],
+        "scope": "keyboard",
+        "description": "Keyboard key S"
+    },
+    {
+        "name": "HID_KEY_T",
+        "reportID": [0, 0, 0, 0, 0, 0, 0, 0x17],
+        "scope": "keyboard",
+        "description": "Keyboard key T"
+    },
+    {
+        "name": "HID_KEY_U",
+        "reportID": [0, 0, 0, 0, 0, 0, 0, 0x18],
+        "scope": "keyboard",
+        "description": "Keyboard key U"
+    },
+    {
+        "name": "HID_KEY_V",
+        "reportID": [0, 0, 0, 0, 0, 0, 0, 0x19],
+        "scope": "keyboard",
+        "description": "Keyboard key V"
+    },
+    {
+        "name": "HID_KEY_W",
+        "reportID": [0, 0, 0, 0, 0, 0, 0, 0x1A],
+        "scope": "keyboard",
+        "description": "Keyboard key W"
+    },
+    {
+        "name": "HID_KEY_X",
+        "reportID": [0, 0, 0, 0, 0, 0, 0, 0x1B],
+        "scope": "keyboard",
+        "description": "Keyboard key X"
+    },
+    {
+        "name": "HID_KEY_Y",
+        "reportID": [0, 0, 0, 0, 0, 0, 0, 0x1C],
+        "scope": "keyboard",
+        "description": "Keyboard key Y"
+    },
+    {
+        "name": "HID_KEY_Z",
+        "reportID": [0, 0, 0, 0, 0, 0, 0, 0x1D],
+        "scope": "keyboard",
+        "description": "Keyboard key Z"
     },
     {
         "name": "Report 2",
