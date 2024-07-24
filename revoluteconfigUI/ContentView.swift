@@ -229,7 +229,11 @@ struct SheetView: View {
         VStack {
                   HStack(spacing: 10) {
                       Button(action: {
-                          selectedButton = 1
+                          withAnimation {
+                        selectedButton = 1
+                         }
+
+                        
                       }) {
                           Text("Action")
                               .frame(maxWidth: .infinity)
@@ -244,7 +248,9 @@ struct SheetView: View {
                       }
 
                       Button(action: {
-                          selectedButton = 2
+                          withAnimation {
+                              selectedButton = 2
+                          }
                       }) {
                           Text("Sensitivity")
                               .frame(maxWidth: .infinity)
@@ -267,10 +273,15 @@ struct SheetView: View {
             if selectedButton == 1 {
                 
                 DropDownMenu()
+                    .transition(.move(edge: .leading)) // Add fade transition
+                    
                 
             }else {
                 
                 SensitivityView()
+                    
+                    .transition(.move(edge: .trailing)) // Add fade transition
+                    
                 
             }
             
