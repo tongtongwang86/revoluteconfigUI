@@ -11,7 +11,7 @@ import SwiftUI
 struct revoluteconfigUIApp: App {
     var body: some Scene {
         WindowGroup {
-            ReportListView()
+            ContentView()
         }
     }
 }

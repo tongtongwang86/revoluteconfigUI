@@ -224,6 +224,8 @@ struct WindowBackgroundColorView: View {
 
 struct SheetView: View {
     @State private var selectedButton: Int? = 1
+    @StateObject private var viewModel = ReportViewModel()
+    
     var body: some View {
         
         VStack {
@@ -250,6 +252,9 @@ struct SheetView: View {
                       Button(action: {
                           withAnimation {
                               selectedButton = 2
+                              viewModel.isEditing = false
+                              UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+
                           }
                       }) {
                           Text("Sensitivity")
@@ -272,7 +277,9 @@ struct SheetView: View {
             
             if selectedButton == 1 {
                 
-                ActionView()
+//                ActionView()
+                ReportListView()
+                
                     .transition(.move(edge: .leading)) // Add fade transition
                     
                 

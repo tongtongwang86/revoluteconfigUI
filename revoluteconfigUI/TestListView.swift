@@ -24,6 +24,7 @@ class ReportViewModel: ObservableObject {
     @Published var searchText: String = ""
     @Published var selectedScope: String? = "All"
     @Published var filteredReports: [Report] = []
+    @Published var isEditing: Bool = false
     
     private var cancellables = Set<AnyCancellable>()
     
@@ -59,33 +60,90 @@ struct ReportListView: View {
     @StateObject private var viewModel = ReportViewModel()
     
     var body: some View {
-        NavigationView {
+        
+       
             VStack {
-                SearchBar(searchText: $viewModel.searchText, selectedScope: $viewModel.selectedScope)
+                SearchBar(searchText: $viewModel.searchText, selectedScope: $viewModel.selectedScope, isEditing: $viewModel.isEditing)
                 
                 List(viewModel.filteredReports) { report in
                     HStack {
                         Text(report.name)
                         Spacer()
-                        Button("Action 1") {
+                        
+                        
+//                        Button(action: {
+//                            print("Action 1 for \(report.reportID)")
+//                            
+//                        }) {
+//                            Image(systemName: "digitalcrown.horizontal.arrow.clockwise")
+//                                .foregroundColor(.white)
+//                                .padding([.top, .leading, .trailing,.bottom])
+//                            
+////                                .frame(maxWidth: .infinity)
+//                                .background(Color.black.opacity(0.3))
+//                                .cornerRadius(16)
+//                        }
+                        
+//                        Button(action: {
+//                            print("Action 2 for \(report.reportID)")
+//                            
+//                        }) {
+//                            Image(systemName: "digitalcrown.horizontal.arrow.counterclockwise")
+//                                .foregroundColor(.white)
+//                                .padding([.top, .leading, .trailing,.bottom])
+////                                .frame(maxWidth: .infinity)
+//                                .background(Color.black.opacity(0.3))
+//                                .cornerRadius(16)
+//                        }
+                        
+//                        Button {
+//                            print("Action 1 for \(report.reportID)")
+//                        } label: {
+//                            Image(systemName: "digitalcrown.horizontal.arrow.counterclockwise")
+//                        }
+                        
+                        
+                        Button {
                             // Perform action 1 with report.reportID
                             print("Action 1 for \(report.reportID)")
+                        }label: {
+                            Image(systemName: "digitalcrown.horizontal.arrow.clockwise")
                         }
                         .buttonStyle(BorderlessButtonStyle())
-                        .padding(.trailing, 8)
-                        Button("Action 2") {
-                            // Perform action 2 with report.reportID
+                        .padding([.top, .leading, .trailing,.bottom],(20))
+                        .foregroundColor(.white)
+                        .background(Color.black.opacity(0.3))
+                        .cornerRadius(16)
+//                        .border(.red)
+                        
+                        Button {
+                            // Perform action 1 with report.reportID
                             print("Action 2 for \(report.reportID)")
+                        }label: {
+                            Image(systemName: "digitalcrown.horizontal.arrow.counterclockwise")
                         }
                         .buttonStyle(BorderlessButtonStyle())
+                        .padding([.top, .leading, .trailing,.bottom],(20))
+                        .foregroundColor(.white)
+                        .background(Color.black.opacity(0.3))
+                        .cornerRadius(16)
+//                        .border(.red)
+                        
+                        
+                        
+                    
+//                        Button("Action 2") {
+//                            // Perform action 2 with report.reportID
+//                            print("Action 2 for \(report.reportID)")
+//                        }
+//                        .buttonStyle(BorderlessButtonStyle())
                     }
                     .contextMenu {
                         Text(report.description)
                     }
                 }
                 .listStyle(PlainListStyle())
-            }
-            .navigationTitle("Reports")
+         
         }
     }
 }
@@ -96,10 +154,24 @@ struct ReportListView_Previews: PreviewProvider {
     }
 }
 
+struct WhiteBorder: TextFieldStyle {
+    func _body(configuration: TextField<Self._Label>) -> some View {
+        configuration
+            
+            .padding(9)
+            .overlay(
+                RoundedRectangle(cornerRadius: 15)
+                    .stroke(Color.gray, lineWidth:1)
+            )
+            
+    }
+}
+
+
 struct SearchBar: View {
     @Binding var searchText: String
     @Binding var selectedScope: String?
-    @State private var isEditing = false
+    @Binding var isEditing: Bool
     
     let scopes = ["All", "keyboard", "consumer", "mouse"]
     
@@ -108,14 +180,22 @@ struct SearchBar: View {
             HStack {
                 Image(systemName: "magnifyingglass")
                     .foregroundColor(.gray)
+                    .padding([.leading, .trailing],(0.7))
                 
                 TextField("Search...", text: $searchText, onEditingChanged: { isEditing in
                     withAnimation {
                         self.isEditing = isEditing
                     }
                 })
-                .textFieldStyle(RoundedBorderTextFieldStyle())
-                .padding(.leading)
+                
+                
+                .textFieldStyle(WhiteBorder())
+//                .padding([.top, .leading, .trailing,.bottom],(0))
+//                .background(Color.black.opacity(0.3))
+//                .cornerRadius(16)
+                
+                
+//                .padding(.leading)
                 
                 
                 if isEditing {
