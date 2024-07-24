@@ -14,6 +14,8 @@
 		BB16F0A32C4FEF140040421D /* revoluteconfigUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB16F0A22C4FEF140040421D /* revoluteconfigUITests.swift */; };
 		BB16F0AD2C4FEF140040421D /* revoluteconfigUIUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB16F0AC2C4FEF140040421D /* revoluteconfigUIUITests.swift */; };
 		BB16F0AF2C4FEF140040421D /* revoluteconfigUIUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB16F0AE2C4FEF140040421D /* revoluteconfigUIUITestsLaunchTests.swift */; };
+		BB6F1C342C50D25F000696CB /* base.usdz in Resources */ = {isa = PBXBuildFile; fileRef = BB6F1C312C50D25F000696CB /* base.usdz */; };
+		BB6F1C352C50D25F000696CB /* cap.usdz in Resources */ = {isa = PBXBuildFile; fileRef = BB6F1C322C50D25F000696CB /* cap.usdz */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +46,8 @@
 		BB16F0A82C4FEF140040421D /* revoluteconfigUIUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = revoluteconfigUIUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB16F0AC2C4FEF140040421D /* revoluteconfigUIUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = revoluteconfigUIUITests.swift; sourceTree = "<group>"; };
 		BB16F0AE2C4FEF140040421D /* revoluteconfigUIUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = revoluteconfigUIUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		BB6F1C312C50D25F000696CB /* base.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = base.usdz; sourceTree = "<group>"; };
+		BB6F1C322C50D25F000696CB /* cap.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = cap.usdz; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +100,7 @@
 			children = (
 				BB16F0912C4FEF130040421D /* revoluteconfigUIApp.swift */,
 				BB16F0932C4FEF130040421D /* ContentView.swift */,
+				BB6F1C332C50D25F000696CB /* Objects */,
 				BB16F0952C4FEF140040421D /* Assets.xcassets */,
 				BB16F0972C4FEF140040421D /* Preview Content */,
 			);
@@ -125,6 +130,15 @@
 				BB16F0AE2C4FEF140040421D /* revoluteconfigUIUITestsLaunchTests.swift */,
 			);
 			path = revoluteconfigUIUITests;
+			sourceTree = "<group>";
+		};
+		BB6F1C332C50D25F000696CB /* Objects */ = {
+			isa = PBXGroup;
+			children = (
+				BB6F1C312C50D25F000696CB /* base.usdz */,
+				BB6F1C322C50D25F000696CB /* cap.usdz */,
+			);
+			path = Objects;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,6 +245,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB6F1C352C50D25F000696CB /* cap.usdz in Resources */,
+				BB6F1C342C50D25F000696CB /* base.usdz in Resources */,
 				BB16F0992C4FEF140040421D /* Preview Assets.xcassets in Resources */,
 				BB16F0962C4FEF140040421D /* Assets.xcassets in Resources */,
 			);

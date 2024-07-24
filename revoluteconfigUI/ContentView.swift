@@ -5,6 +5,112 @@
 //  Created by Tong tong wang on 23/07/2024.
 //
 
+extension UIScreen{
+   static let screenWidth = UIScreen.main.bounds.size.width
+   static let screenHeight = UIScreen.main.bounds.size.height
+   static let screenSize = UIScreen.main.bounds.size
+}
+
+import SceneKit
+
+struct SceneViewContainer: UIViewRepresentable {
+    @Binding var capRotationY: Float
+    @Environment(\.colorScheme) var colorScheme
+    
+    func makeUIView(context: Context) -> SCNView {
+        let sceneView = SCNView()
+        sceneView.scene = makeScene()
+        sceneView.autoenablesDefaultLighting = true
+        sceneView.allowsCameraControl = false
+        updateBackgroundColor(sceneView: sceneView)
+        return sceneView
+    }
+    
+    func updateUIView(_ uiView: SCNView, context: Context) {
+        updateSceneView(uiView)
+    }
+}
+
+
+extension SceneViewContainer {
+    func makeScene() -> SCNScene {
+        let scene = SCNScene()
+        
+        if let baseScene = SCNScene(named: "base.usdz") {
+            let baseNode = baseScene.rootNode.clone()
+            baseNode.name = "base"
+            scene.rootNode.addChildNode(baseNode)
+        }
+        
+        if let capScene = SCNScene(named: "cap.usdz") {
+            let capNode = capScene.rootNode.clone()
+            capNode.name = "cap"
+            scene.rootNode.addChildNode(capNode)
+        }
+        
+        let cameraNode = SCNNode()
+        let camera = SCNCamera()
+        camera.fieldOfView = 20
+        cameraNode.camera = camera
+        cameraNode.position = SCNVector3(x: 4, y: 5, z: 10)
+        #if os(macOS)
+        cameraNode.eulerAngles = SCNVector3(x: CGFloat(degreesToRadians(27)), y: 0, z: 0)
+        #else
+        cameraNode.eulerAngles = SCNVector3(x: degreesToRadians(27), y: 0, z: 0)
+        #endif
+        scene.rootNode.addChildNode(cameraNode)
+        
+        if let capNode = scene.rootNode.childNode(withName: "cap", recursively: true) {
+            let lookAtConstraint = SCNLookAtConstraint(target: capNode)
+            cameraNode.constraints = [lookAtConstraint]
+        }
+        
+        return scene
+    }
+    
+    func updateSceneView(_ sceneView: SCNView) {
+        if let capNode = sceneView.scene?.rootNode.childNode(withName: "cap", recursively: true) {
+            let currentAngle = capNode.eulerAngles.y
+            let targetAngle = degreesToRadians(capRotationY)
+            let shortestPath = shortestAngleDifference(from: Float(currentAngle), to: targetAngle)
+            
+            SCNTransaction.begin()
+            SCNTransaction.animationDuration = 1
+            
+            #if os(macOS)
+            capNode.eulerAngles.y = currentAngle + CGFloat(shortestPath)
+            #else
+            capNode.eulerAngles.y = currentAngle + shortestPath
+            #endif
+            
+            SCNTransaction.commit()
+        }
+        updateBackgroundColor(sceneView: sceneView)
+    }
+    
+    func degreesToRadians(_ degrees: Float) -> Float {
+        return degrees * .pi / 180
+    }
+
+    func shortestAngleDifference(from start: Float, to end: Float) -> Float {
+        let twoPi: Float = 2 * .pi
+        var diff = end - start
+        
+        while diff > .pi {
+            diff -= twoPi
+        }
+        while diff < -.pi {
+            diff += twoPi
+        }
+        
+        return diff
+    }
+    
+    func updateBackgroundColor(sceneView: SCNView) {
+        sceneView.backgroundColor = .clear
+    }
+}
+
 import UIKit
 
 class HapticFeedbackManager {
@@ -20,26 +126,101 @@ class HapticFeedbackManager {
 }
 
 import SwiftUI
+
 struct ContentView: View {
+    @Environment(\.colorScheme) var colorScheme
     @State var presentSheet = false
     
     var body: some View {
         NavigationView {
-            Button("Modal") {
-                presentSheet = true
+            VStack {
+                SquareBoxView()
+                Spacer()
+                Button("Modal") {
+                    presentSheet = true
+                }
             }
-            .navigationTitle("Config")
-        }.sheet(isPresented: $presentSheet) {
-            SheetView()
-            
-                .presentationDetents([.fraction(0.75), .large])
-        .presentationCornerRadius(50)
-        .interactiveDismissDisabled(true)
+            .background(
+                VStack {
+                    Spacer()
+                }
+                .navigationBarTitleDisplayMode(.inline)
+                .toolbar {
+                    ToolbarItem(placement: .topBarLeading) {
+                        if colorScheme == .dark {
+                            Text("Configurator")
+                            
+                                .font(.largeTitle)
+                                .bold()
+                                .padding(.top, 50)
+                                .shadow(color: .black, radius: 25, x: 0, y: 0)
+                                .shadow(color: .black, radius: 25, x: 0, y: 0)
+                                .shadow(color: .black, radius: 20, x: 0, y: 0)
 
+                            
+                        }else{
+                            Text("Configurator")
+                            
+                                .font(.largeTitle)
+                                .bold()
+                                .padding(.top, 50)
+                                .shadow(color: .white, radius: 15, x: 0, y: 0)
+                                .shadow(color: .white, radius: 15, x: 0, y: 0)
+                                .shadow(color: .white, radius: 15, x: 0, y: 0)
+                                .shadow(color: .white, radius: 15, x: 0, y: 0)
+                        }
+                    }
+                }
+            )
+        }
+        .sheet(isPresented: $presentSheet) {
+            SheetView()
+                .presentationDetents([.fraction(0.75), .large])
+                .presentationCornerRadius(50)
+                .interactiveDismissDisabled(true)
+        }
+        .navigationViewStyle(StackNavigationViewStyle()) // This line can help ensure that the nav view style is correct on all devices
+        .hiddenNavigationBar() // Custom modifier to hide the navigation bar
+    }
+}
+
+extension View {
+    func hiddenNavigationBar() -> some View {
+        self.modifier(HideNavigationBarModifier())
+    }
+}
+
+struct HideNavigationBarModifier: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .background(NavigationConfigurator { nc in
+                nc.navigationBar.isHidden = true
+            })
+    }
+}
+
+struct NavigationConfigurator: UIViewControllerRepresentable {
+    var configure: (UINavigationController) -> Void = { _ in }
+    
+    func makeUIViewController(context: Context) -> UIViewController {
+        UIViewController()
+    }
+    
+    func updateUIViewController(_ uiViewController: UIViewController, context: Context) {
+        if let nc = uiViewController.navigationController {
+            self.configure(nc)
         }
     }
 }
 
+struct WindowBackgroundColorView: View {
+    @Environment(\.colorScheme) var colorScheme
+    
+    var body: some View {
+        Color.clear
+            .edgesIgnoringSafeArea(.all)
+    }
+}
 
 struct SheetView: View {
     @State private var selectedButton: Int? = 1
@@ -207,7 +388,7 @@ struct RatingView: View {
                                 .onChanged { value in
                                     
                                     dragOffset = value.translation.width
-                                    print(dragOffset)
+//                                    print(dragOffset)
                                     withAnimation {
                                         if (lastDragOffset - dragOffset) > distPerIdent{
                                             if rating > minVal{
@@ -295,8 +476,9 @@ struct circle: View {
 }
 
 
+
 struct DropDownMenu: View {
-    var fruits = ["Mouse", "Consumer", "Keyboard"]
+    var fruits = [("Mouse", "computermouse"), ("Consumer", "slider.vertical.3"), ("Keyboard", "keyboard")]
     @State private var selectedFruit: String = "Mouse"
     
     var body: some View {
@@ -304,17 +486,15 @@ struct DropDownMenu: View {
             Menu(
                 content: {
                     Picker("fruits", selection: $selectedFruit) {
-                        ForEach(fruits, id: \.self) { fruit in
-                            Text(fruit)
+                        ForEach(fruits, id: \.0) { fruit in
+                            Label(fruit.0, systemImage: fruit.1)
                         }
                     }
                 }, label: {
                     (Text("\(selectedFruit) ") + Text(Image(systemName: "chevron.down")))
-
                         .padding()
                         .foregroundColor(.white)
                         .cornerRadius(16)
-                                        
                         .frame(maxWidth: .infinity) // Make the button span the width of the screen
                         .background(Color.black.opacity(0.3))
                         .cornerRadius(16)
@@ -328,6 +508,28 @@ struct DropDownMenu: View {
 }
 
 
+
+struct SquareBoxView: View {
+    var body: some View {
+        
+        SceneViewContainer(
+            
+            capRotationY: .constant(Float(213)
+//                .constant(Float(bluetoothManager.uint16Value))
+                                   )
+        
+        
+        )
+//        .border(.red)
+        .frame(maxWidth: UIScreen.screenWidth, maxHeight: UIScreen.screenWidth)
+        .background(WindowBackgroundColorView())
+        .edgesIgnoringSafeArea(.top)
+            
+            
+        
+
+    }
+}
 
 
 
