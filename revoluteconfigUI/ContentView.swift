@@ -280,14 +280,22 @@ struct SheetView: View {
 //                ActionView()
                 ReportListView()
                 
-                    .transition(.move(edge: .leading)) // Add fade transition
+                    .transition(.scale(scale: 0.8, anchor: UnitPoint(x: 0, y: 0)).combined(with: .move(edge: .leading)))
+                
+                
+//                    .transition(.move(edge: .leading).combined(with: .scale(0.5))) // Add fade transition
+//                    .transition(.move(edge: .leading).combined(with: .scale(0.8, anchor: UnitPoint(x: 0, y: 0)))) // Add fade transition
                     
                 
             }else {
                 
                 SensitivityView()
                     
-                    .transition(.move(edge: .trailing)) // Add fade transition
+//                    .transition(.move(edge: .trailing)) // Add fade transition
+//                    .transition(.move(edge: .trailing).combined(with: .scale(0.8, anchor: UnitPoint(x: 0, y: 0)))) // Add fade transition
+//                    .transition(.move(edge: .trailing).combined(with: .scale(0.5)))
+                
+                    .transition(.scale(scale: 0.8, anchor: UnitPoint(x: 1, y: 0)).combined(with: .move(edge: .trailing)))
                     
                 
             }

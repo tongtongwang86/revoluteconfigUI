@@ -143,6 +143,7 @@ struct ReportListView: View {
                     }
                 }
                 .listStyle(PlainListStyle())
+                .cornerRadius(16)
          
         }
     }
