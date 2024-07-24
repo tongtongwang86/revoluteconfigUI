@@ -272,7 +272,7 @@ struct SheetView: View {
             
             if selectedButton == 1 {
                 
-                DropDownMenu()
+                ActionView()
                     .transition(.move(edge: .leading)) // Add fade transition
                     
                 
@@ -488,36 +488,131 @@ struct circle: View {
 
 
 
-struct DropDownMenu: View {
-    var fruits = [("Mouse", "computermouse"), ("Consumer", "slider.vertical.3"), ("Keyboard", "keyboard")]
-    @State private var selectedFruit: String = "Mouse"
+struct ActionView: View {
+    var modes = [("Mouse", "computermouse"), ("Consumer", "slider.vertical.3"), ("Keyboard", "keyboard")]
+    @State private var selectedMode: String = "Mouse"
+    @State private var searchText: String = ""
+    
     
     var body: some View {
         VStack {
-            Menu(
-                content: {
-                    Picker("fruits", selection: $selectedFruit) {
-                        ForEach(fruits, id: \.0) { fruit in
-                            Label(fruit.0, systemImage: fruit.1)
-                        }
+            Menu {
+                Picker("modes", selection: $selectedMode) {
+                    ForEach(modes, id: \.0) { mode in
+                        Label(mode.0, systemImage: mode.1).tag(mode.0)
                     }
-                }, label: {
-                    (Text("\(selectedFruit) ") + Text(Image(systemName: "chevron.down")))
-                        .padding()
-                        .foregroundColor(.white)
-                        .cornerRadius(16)
-                        .frame(maxWidth: .infinity) // Make the button span the width of the screen
-                        .background(Color.black.opacity(0.3))
-                        .cornerRadius(16)
-                })
-//            .border(.red)
-                .contentShape(Rectangle()) // Make the hitbox area larger
+                }
+            } label: {
+                (Text("\(selectedMode) ") + Text(Image(systemName: "chevron.down")))
+                    .padding()
+                    .foregroundColor(.white)
+                    .cornerRadius(16)
+                    .frame(maxWidth: .infinity) // Make the button span the width of the screen
+                    .background(Color.black.opacity(0.3))
+                    .cornerRadius(16)
+            }
+            .contentShape(Rectangle())
+            
+            
+            TextField("Search", text: $searchText)
+                            .padding(10)
+                            .background(Color(.systemGray5))
+                            .cornerRadius(8)
+                            .padding([.leading, .trailing, .top])
+            
+            ScrollView{
+                
+                if selectedMode == "Mouse" {
+                    ListView(title: "Mouse List", items: ["Item 1", "Item 2", "Item 3"], searchText: searchText)
+                } else if selectedMode == "Consumer" {
+                    ListView(title: "Consumer List", items: ["Item A", "Item B", "Item C"], searchText: searchText)
+                } else if selectedMode == "Keyboard" {
+                    ListView(title: "Keyboard List", items: ["Item X", "Item Y", "Item Z"], searchText: searchText)
+                }
+            }.cornerRadius(16)
         }
-//        .border(.red)
-        .padding([.leading, .bottom, .trailing]) // Add padding to the VStack to avoid edge clipping
+        .padding([.leading, .bottom, .trailing])
     }
 }
 
+struct ListView: View {
+    var title: String
+       var items: [String]
+       var searchText: String
+       
+       var filteredItems: [String] {
+           if searchText.isEmpty {
+               return items
+           } else {
+               return items.filter { $0.lowercased().contains(searchText.lowercased()) }
+           }
+       }
+    
+    var body: some View {
+
+            ForEach(filteredItems, id: \.self) { item in
+                HStack{
+                    
+                    Text(item)
+    //                     .padding()
+                        .foregroundColor(.white)
+                        .padding([.top,.bottom])
+                        .frame(maxWidth: .infinity) // Make the button span the width of the screen
+                        .background(Color.black.opacity(0.3))
+                        .cornerRadius(16)
+                    
+                    HStack{
+                        
+                        Button(action: {
+                            // Action to perform when the button is tapped
+                        }) {
+                            Image(systemName: "digitalcrown.horizontal.arrow.clockwise")
+                                .foregroundColor(.white)
+                                .padding([.top, .bottom])
+                                .frame(maxWidth: .infinity)
+                                .background(Color.black.opacity(0.3))
+                                .cornerRadius(16)
+                        }
+                        
+                        Button(action: {
+                            // Action to perform when the button is tapped
+                        }) {
+                            Image(systemName: "digitalcrown.horizontal.arrow.counterclockwise")
+                                .foregroundColor(.white)
+                                .padding([.top, .bottom])
+                                .frame(maxWidth: .infinity)
+                                .background(Color.black.opacity(0.3))
+                                .cornerRadius(16)
+                        }
+
+
+
+
+
+
+                        
+                        
+                    }
+                    
+                    
+                    
+                    
+                }
+              
+                
+            }
+//            .frame(maxWidth: .infinity)
+            .foregroundColor(.white)
+//            .cornerRadius(16)
+            
+//            .border(.red)
+            .frame(maxWidth: .infinity)
+            
+        
+        
+        
+    }
+}
 
 
 struct SquareBoxView: View {
