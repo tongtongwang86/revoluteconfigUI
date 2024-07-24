@@ -16,6 +16,9 @@ struct Report: Identifiable, Codable {
     }
 }
 
+
+
+
 class ReportViewModel: ObservableObject {
     @Published var reports: [Report] = []
     @Published var searchText: String = ""
@@ -76,6 +79,9 @@ struct ReportListView: View {
                         }
                         .buttonStyle(BorderlessButtonStyle())
                     }
+                    .contextMenu {
+                        Text(report.description)
+                    }
                 }
                 .listStyle(PlainListStyle())
             }
@@ -89,7 +95,6 @@ struct ReportListView_Previews: PreviewProvider {
         ReportListView()
     }
 }
-
 struct SearchBar: View {
     @Binding var searchText: String
     @Binding var selectedScope: String?
@@ -101,17 +106,21 @@ struct SearchBar: View {
         VStack {
             HStack {
                 TextField("Search...", text: $searchText, onEditingChanged: { isEditing in
-                    self.isEditing = isEditing
+                    withAnimation {
+                        self.isEditing = isEditing
+                    }
                 })
                 .textFieldStyle(RoundedBorderTextFieldStyle())
                 .padding(.leading)
                 
                 if isEditing {
                     Button("Clear") {
-                        searchText = ""
-                        selectedScope = "All"
-                        isEditing = false
-                        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+                        withAnimation {
+                            searchText = ""
+                            selectedScope = "All"
+                            isEditing = false
+                            UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+                        }
                     }
                     .padding(.trailing)
                 }
@@ -126,6 +135,7 @@ struct SearchBar: View {
                 }
                 .pickerStyle(SegmentedPickerStyle())
                 .padding(.horizontal)
+                .transition(.move(edge: .top).combined(with: .opacity))
             }
         }
     }
