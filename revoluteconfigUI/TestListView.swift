@@ -52,8 +52,43 @@ class ReportViewModel: ObservableObject {
     }
 }
 
+struct ReportListView: View {
+    @StateObject private var viewModel = ReportViewModel()
+    
+    var body: some View {
+        NavigationView {
+            VStack {
+                SearchBar(searchText: $viewModel.searchText, selectedScope: $viewModel.selectedScope)
+                
+                List(viewModel.filteredReports) { report in
+                    HStack {
+                        Text(report.name)
+                        Spacer()
+                        Button("Action 1") {
+                            // Perform action 1 with report.reportID
+                            print("Action 1 for \(report.reportID)")
+                        }
+                        .buttonStyle(BorderlessButtonStyle())
+                        .padding(.trailing, 8)
+                        Button("Action 2") {
+                            // Perform action 2 with report.reportID
+                            print("Action 2 for \(report.reportID)")
+                        }
+                        .buttonStyle(BorderlessButtonStyle())
+                    }
+                }
+                .listStyle(PlainListStyle())
+            }
+            .navigationTitle("Reports")
+        }
+    }
+}
 
-
+struct ReportListView_Previews: PreviewProvider {
+    static var previews: some View {
+        ReportListView()
+    }
+}
 
 struct SearchBar: View {
     @Binding var searchText: String
@@ -85,8 +120,8 @@ struct SearchBar: View {
             
             if isEditing {
                 Picker("Scope", selection: $selectedScope) {
-                    ForEach(scopes, id: \.self) {
-                        Text($0.capitalized)
+                    ForEach(scopes, id: \.self) { scope in
+                        Text(scope.capitalized).tag(scope as String?)
                     }
                 }
                 .pickerStyle(SegmentedPickerStyle())
@@ -95,44 +130,3 @@ struct SearchBar: View {
         }
     }
 }
-
-
-struct ReportListView: View {
-    @StateObject private var viewModel = ReportViewModel()
-    
-    var body: some View {
-        NavigationView {
-            VStack {
-                SearchBar(searchText: $viewModel.searchText, selectedScope: $viewModel.selectedScope)
-                
-                List(viewModel.filteredReports) { report in
-                    HStack {
-                        Text(report.name)
-                        Spacer()
-                        Button("Action 1") {
-                            // Perform action 1 with report.reportID
-                            print("Action 1 for \(report.reportID)")
-                        }
-                        .padding(.trailing, 8)
-                        .border(.red)
-                        Button("Action 2") {
-                            // Perform action 2 with report.reportID
-                            print("Action 2 for \(report.reportID)")
-                        }
-                    }
-                }
-                .listStyle(PlainListStyle())
-            }
-            .navigationTitle("Reports")
-        }
-    }
-}
-
-struct ReportListView_Previews: PreviewProvider {
-    static var previews: some View {
-        ReportListView()
-    }
-}
-
-
-
