@@ -79,20 +79,24 @@ struct SheetView: View {
                       }
                   }
                   .frame(maxWidth: .infinity) // Make HStack take full width
-                  .padding()
+                  .padding([.top, .leading, .trailing])
+                  .padding(.bottom, 5)
+//                    .border(.red)
             
             if selectedButton == 1 {
                 
-                
+                DropDownMenu()
                 
             }else {
                 
                 SensitivityView()
+                
             }
             
             
                
               }
+        
               .frame(maxHeight: .infinity, alignment: .top) // Make VStack stick to the top
               .padding()
         
@@ -151,7 +155,8 @@ struct SensitivityView: View {
             
             
             
-        }.frame(maxHeight: .infinity, alignment: .top)
+        }
+        .frame(maxHeight: .infinity, alignment: .top)
         
         
         
@@ -286,6 +291,39 @@ struct circle: View {
             .scaleEffect(isDragging ? 1.5 : 1)
             .offset(offset)
             .gesture(combined)
+    }
+}
+
+
+struct DropDownMenu: View {
+    var fruits = ["Mouse", "Consumer", "Keyboard"]
+    @State private var selectedFruit: String = "Mouse"
+    
+    var body: some View {
+        VStack {
+            Menu(
+                content: {
+                    Picker("fruits", selection: $selectedFruit) {
+                        ForEach(fruits, id: \.self) { fruit in
+                            Text(fruit)
+                        }
+                    }
+                }, label: {
+                    (Text("\(selectedFruit) ") + Text(Image(systemName: "chevron.down")))
+
+                        .padding()
+                        .foregroundColor(.white)
+                        .cornerRadius(16)
+                                        
+                        .frame(maxWidth: .infinity) // Make the button span the width of the screen
+                        .background(Color.black.opacity(0.3))
+                        .cornerRadius(16)
+                })
+//            .border(.red)
+                .contentShape(Rectangle()) // Make the hitbox area larger
+        }
+//        .border(.red)
+        .padding([.leading, .bottom, .trailing]) // Add padding to the VStack to avoid edge clipping
     }
 }
 
