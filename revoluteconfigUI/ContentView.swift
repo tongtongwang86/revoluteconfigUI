@@ -81,7 +81,15 @@ struct SheetView: View {
                   .frame(maxWidth: .infinity) // Make HStack take full width
                   .padding()
             
-            SensitivityView()
+            if selectedButton == 1 {
+                
+                
+                
+            }else {
+                
+                SensitivityView()
+            }
+            
             
                
               }
@@ -95,6 +103,12 @@ struct SheetView: View {
 
 
 struct SensitivityView: View {
+    
+    @State private var IdentPerRevolution: Int = 30 //set default
+    @State private var deadZone: Int = 1 //set default
+    @State private var rating3: Int = 50
+    
+    
     @State private var sliderValue1: Double = 0.5
     @State private var sliderValue2: Double = 0.5
     @State private var rating: Int = 5
@@ -115,7 +129,9 @@ struct SensitivityView: View {
       
             
             
-            RatingView()
+            
+            RatingView(rating: $IdentPerRevolution, maxVal: 40, minVal: 2, distPerIdent: 15)
+
             
             Text("Dead Zone (Degrees)")
                 
@@ -125,7 +141,8 @@ struct SensitivityView: View {
                 .padding(.bottom, -20.0)
                 .dynamicTypeSize(.xxLarge)
 //                .border(.red)
-            RatingView()
+            RatingView(rating: $deadZone, maxVal: 10, minVal: 0, distPerIdent: 20)
+            
             
             
             
@@ -144,10 +161,16 @@ struct SensitivityView: View {
 
 
 struct RatingView: View {
-    @State private var rating: Int = 30
-    @State private var dragOffset: CGFloat = 0
     
+//    @State private var rating: Int
+    @Binding var rating: Int
+    @State private var dragOffset: CGFloat = 0
     @State private var lastDragOffset: CGFloat = 0
+    
+
+    let maxVal: Int
+    let minVal: Int
+    let distPerIdent: CGFloat
     
     
     
@@ -163,16 +186,17 @@ struct RatingView: View {
                     Image(systemName: "minus.circle")
                         .font(.system(size: 50))
                 }
-                .disabled(rating == 2)
+                .disabled(rating == minVal)
                 
-                GeometryReader { geometry in
+                
                     Text("\(rating)")
                         .font(.system(size: 75))
                         .bold()
-                        .padding(.horizontal, 2.407)
+                        .padding(.horizontal, 50)
+//                        .frame(width: 200.0)
                         .contentTransition(.numericText(value: Double(rating)))
-                        .frame(width: geometry.size.width)
-                        
+//                        .frame(width: geometry.size.width)
+                        .contentShape(Rectangle())
                         .gesture(
                             DragGesture()
                                 .onChanged { value in
@@ -180,14 +204,14 @@ struct RatingView: View {
                                     dragOffset = value.translation.width
                                     print(dragOffset)
                                     withAnimation {
-                                        if (lastDragOffset - dragOffset) > 10{
-                                            if rating > 2{
+                                        if (lastDragOffset - dragOffset) > distPerIdent{
+                                            if rating > minVal{
                                                 rating -= 1
                                                 HapticFeedbackManager.shared.playImpactFeedback()
                                                 lastDragOffset = dragOffset
                                             }
-                                        }else if (lastDragOffset - dragOffset) < (-10) {
-                                            if rating < 40{
+                                        }else if (lastDragOffset - dragOffset) < (-distPerIdent) {
+                                            if rating < maxVal{
                                                 rating += 1
                                                 HapticFeedbackManager.shared.playImpactFeedback()
                                                 lastDragOffset = dragOffset
@@ -197,13 +221,15 @@ struct RatingView: View {
                     
                                     }
                                 }
+                            
                                 .onEnded { _ in
                                     dragOffset = 0
                                 }
                         )
-                }
-                .frame(width: 150, height: 90) // Fixed width for the GeometryReader
-                .border(.red)
+                
+//                .frame(width: 150, height: 90) // Fixed width for the GeometryReader
+                        
+//                .border(.red)
                 
                 
                 Button(action: {
@@ -215,7 +241,7 @@ struct RatingView: View {
                     Image(systemName: "plus.circle")
                         .font(.system(size: 50))
                 }
-                .disabled(rating == 40)
+                .disabled(rating == maxVal)
             }
         }
         .padding()
