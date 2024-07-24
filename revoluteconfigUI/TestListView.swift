@@ -106,6 +106,7 @@ struct ReportListView: View {
                         Button {
                             // Perform action 1 with report.reportID
                             print("Action 1 for \(report.reportID)")
+                            HapticFeedbackManager.shared.playImpactFeedback()
                         }label: {
                             Image(systemName: "digitalcrown.horizontal.arrow.clockwise")
                         }
@@ -114,11 +115,23 @@ struct ReportListView: View {
                         .foregroundColor(.white)
                         .background(Color.black.opacity(0.3))
                         .cornerRadius(16)
+                        .onPressGesture(
+                            minimumDuration: 0.0,
+                            perform: {
+                                HapticFeedbackManager.shared.playImpactFeedback() // Play haptic feedback on press
+                            },
+                            onPressingChanged: { pressing in
+                                if !pressing {
+                                    HapticFeedbackManager.shared.playImpactFeedback() // Play haptic feedback on release
+                                }
+                            }
+                        )
 //                        .border(.red)
                         
                         Button {
                             // Perform action 1 with report.reportID
                             print("Action 2 for \(report.reportID)")
+                            HapticFeedbackManager.shared.playImpactFeedback()
                         }label: {
                             Image(systemName: "digitalcrown.horizontal.arrow.counterclockwise")
                         }
@@ -127,6 +140,17 @@ struct ReportListView: View {
                         .foregroundColor(.white)
                         .background(Color.black.opacity(0.3))
                         .cornerRadius(16)
+                        .onPressGesture(
+                            minimumDuration: 0.0,
+                            perform: {
+                                HapticFeedbackManager.shared.playImpactFeedback() // Play haptic feedback on press
+                            },
+                            onPressingChanged: { pressing in
+                                if !pressing {
+                                    HapticFeedbackManager.shared.playImpactFeedback() // Play haptic feedback on release
+                                }
+                            }
+                        )
 //                        .border(.red)
                         
                         

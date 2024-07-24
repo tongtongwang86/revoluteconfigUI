@@ -231,6 +231,7 @@ struct SheetView: View {
         VStack {
                   HStack(spacing: 10) {
                       Button(action: {
+                          HapticFeedbackManager.shared.playImpactFeedback()
                           withAnimation {
                         selectedButton = 1
                          }
@@ -248,8 +249,20 @@ struct SheetView: View {
                                       .stroke(selectedButton == 1 ? Color.blue : Color.clear, lineWidth: 2)
                               )
                       }
+                      .onPressGesture(
+                          minimumDuration: 0.0,
+                          perform: {
+                              HapticFeedbackManager.shared.playImpactFeedback() // Play haptic feedback on press
+                          },
+                          onPressingChanged: { pressing in
+                              if !pressing {
+                                  HapticFeedbackManager.shared.playImpactFeedback() // Play haptic feedback on release
+                              }
+                          }
+                      )
 
                       Button(action: {
+                          HapticFeedbackManager.shared.playImpactFeedback()
                           withAnimation {
                               selectedButton = 2
                               viewModel.isEditing = false
@@ -269,6 +282,19 @@ struct SheetView: View {
                                       .stroke(selectedButton == 2 ? Color.blue : Color.clear, lineWidth: 2)
                               )
                       }
+                      .onPressGesture(
+                          minimumDuration: 0.0,
+                          perform: {
+                              HapticFeedbackManager.shared.playImpactFeedback() // Play haptic feedback on press
+                          },
+                          onPressingChanged: { pressing in
+                              if !pressing {
+                                  HapticFeedbackManager.shared.playImpactFeedback() // Play haptic feedback on release
+                              }
+                          }
+                      )
+                      
+                      
                   }
                   .frame(maxWidth: .infinity) // Make HStack take full width
                   .padding([.top, .leading, .trailing])
