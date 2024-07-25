@@ -157,6 +157,40 @@ class BluetoothManager: NSObject, ObservableObject, CBCentralManagerDelegate, CB
         }
     }
     
+    func writeNumIdentReport(byteArray: [UInt8]) {
+        let data = Data(byteArray)
+
+        if let peripheral = peripheral, let services = peripheral.services {
+            for service in services {
+                if service.uuid == serviceUUID, let characteristics = service.characteristics {
+                    for characteristic in characteristics {
+                        if characteristic.uuid == writeNumIdentCharacteristicUUID {
+                            peripheral.writeValue(data, for: characteristic, type: .withResponse)
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    
+    func writeDeadZoneReport(byteArray: [UInt8]) {
+        let data = Data(byteArray)
+
+        if let peripheral = peripheral, let services = peripheral.services {
+            for service in services {
+                if service.uuid == serviceUUID, let characteristics = service.characteristics {
+                    for characteristic in characteristics {
+                        if characteristic.uuid == writeDeadZoneCharacteristicUUID {
+                            peripheral.writeValue(data, for: characteristic, type: .withResponse)
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    
     
     func writeDownReport(byteArray: [UInt8]) {
         let data = Data(byteArray)

@@ -383,7 +383,7 @@ struct SheetView: View {
                 
             }else {
                 
-                SensitivityView()
+                SensitivityView(bluetoothManager: BluetoothManager())
                     
 //                    .transition(.move(edge: .trailing)) // Add fade transition
 //                    .transition(.move(edge: .trailing).combined(with: .scale(0.8, anchor: UnitPoint(x: 0, y: 0)))) // Add fade transition
@@ -412,13 +412,15 @@ struct SensitivityView: View {
     @State private var IdentPerRevolution: Int = 30 //set default
     @State private var deadZone: Int = 1 //set default
     @State private var rating3: Int = 50
-    
+    @ObservedObject var bluetoothManager: BluetoothManager
     
     @State private var sliderValue1: Double = 0.5
     @State private var sliderValue2: Double = 0.5
     @State private var rating: Int = 5
     
     var body: some View {
+        
+        
         
         VStack{
             
@@ -435,7 +437,22 @@ struct SensitivityView: View {
             
             
             
-            RatingView(rating: $IdentPerRevolution, maxVal: 40, minVal: 2, distPerIdent: 15)
+            RatingView(rating: $IdentPerRevolution, maxVal: 40, minVal: 2, distPerIdent: 15).onChange(of: IdentPerRevolution) { oldValue, newValue in
+                let uint8ident = UInt8(newValue)
+                var uint8identarray: [UInt8] = []
+                uint8identarray.append(uint8ident)
+                bluetoothManager.writeNumIdentReport(byteArray: uint8identarray)
+                print("ident set as:")
+                print(IdentPerRevolution)
+                
+            }
+            
+            
+            
+            
+    
+            
+         
 
             
             Text("Dead Zone (Degrees)")
@@ -446,7 +463,20 @@ struct SensitivityView: View {
                 .padding(.bottom, -20.0)
                 .dynamicTypeSize(.xxLarge)
 //                .border(.red)
-            RatingView(rating: $deadZone, maxVal: 10, minVal: 0, distPerIdent: 20)
+            
+            
+            RatingView(rating: $deadZone, maxVal: 10, minVal: 0, distPerIdent: 20).onChange(of: deadZone) { oldValue, newValue in
+                let uint8dead = UInt8(newValue)
+                var uint8deadarray: [UInt8] = []
+                uint8deadarray.append(uint8dead)
+                bluetoothManager.writeDeadZoneReport(byteArray: uint8deadarray)
+                print("deadzone set as:")
+                print(deadZone)
+                
+            }
+            
+            
+         
             
             
             
@@ -483,6 +513,7 @@ struct RatingView: View {
     var body: some View {
         VStack {
             HStack {
+                
                 Button(action: {
                     withAnimation {
                         rating -= 1
@@ -523,12 +554,20 @@ struct RatingView: View {
                                     withAnimation {
                                         if (lastDragOffset - dragOffset) > distPerIdent{
                                             if rating > minVal{
+                                                
+                                      
+                                                
                                                 rating -= 1
                                                 HapticFeedbackManager.shared.playImpactFeedback()
                                                 lastDragOffset = dragOffset
                                             }
                                         }else if (lastDragOffset - dragOffset) < (-distPerIdent) {
                                             if rating < maxVal{
+                                                
+                                                
+                                           
+                                                
+                                                
                                                 rating += 1
                                                 HapticFeedbackManager.shared.playImpactFeedback()
                                                 lastDragOffset = dragOffset
