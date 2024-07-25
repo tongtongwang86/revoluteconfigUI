@@ -20,6 +20,7 @@
 		BB6F1C392C515EED000696CB /* reports.json in Resources */ = {isa = PBXBuildFile; fileRef = BB6F1C382C515EEC000696CB /* reports.json */; };
 		BB72FB8C2C5189AA002CC22A /* BluetoothManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB72FB8A2C5189A7002CC22A /* BluetoothManager.swift */; };
 		BB72FB8E2C518A25002CC22A /* DeviceSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB72FB8D2C518A25002CC22A /* DeviceSelectionView.swift */; };
+		BB72FB902C527146002CC22A /* EditSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB72FB8F2C527146002CC22A /* EditSheet.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		BB72FB892C518850002CC22A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		BB72FB8A2C5189A7002CC22A /* BluetoothManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BluetoothManager.swift; path = revoluteconfigUI/BluetoothManager.swift; sourceTree = SOURCE_ROOT; };
 		BB72FB8D2C518A25002CC22A /* DeviceSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceSelectionView.swift; sourceTree = "<group>"; };
+		BB72FB8F2C527146002CC22A /* EditSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditSheet.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +112,7 @@
 				BB72FB892C518850002CC22A /* Info.plist */,
 				BB16F0912C4FEF130040421D /* revoluteconfigUIApp.swift */,
 				BB16F0932C4FEF130040421D /* ContentView.swift */,
+				BB72FB8F2C527146002CC22A /* EditSheet.swift */,
 				BB72FB8A2C5189A7002CC22A /* BluetoothManager.swift */,
 				BB6F1C382C515EEC000696CB /* reports.json */,
 				BB6F1C362C515D99000696CB /* TestListView.swift */,
@@ -291,6 +294,7 @@
 				BB6F1C372C515D99000696CB /* TestListView.swift in Sources */,
 				BB16F0942C4FEF130040421D /* ContentView.swift in Sources */,
 				BB72FB8C2C5189AA002CC22A /* BluetoothManager.swift in Sources */,
+				BB72FB902C527146002CC22A /* EditSheet.swift in Sources */,
 				BB16F0922C4FEF130040421D /* revoluteconfigUIApp.swift in Sources */,
 				BB72FB8E2C518A25002CC22A /* DeviceSelectionView.swift in Sources */,
 			);

@@ -16,7 +16,9 @@ import SceneKit
 struct SceneViewContainer: UIViewRepresentable {
     @Binding var capRotationY: Float
     @Environment(\.colorScheme) var colorScheme
-    
+    @Binding var showRing: Bool
+    var ringNode = SCNNode()
+
     func makeUIView(context: Context) -> SCNView {
         let sceneView = SCNView()
         sceneView.scene = makeScene()
@@ -51,7 +53,6 @@ extension SceneViewContainer {
         
         let cameraNode = SCNNode()
         let camera = SCNCamera()
-        
         
         func highResCircularPath(center: CGPoint, radius: CGFloat, segments: Int) -> UIBezierPath {
             let path = UIBezierPath()
@@ -91,19 +92,14 @@ extension SceneViewContainer {
         let ringShape = SCNShape(path: outerCirclePath, extrusionDepth: 0.05)
         ringShape.materials = [material]
 
-        let ringNode = SCNNode()
         ringNode.geometry = ringShape
 
         // Rotate the ring 90 degrees along the Z-axis
         ringNode.eulerAngles.x = .pi / 2
         ringNode.position = SCNVector3(0, 0.3,0 )
         
-
-        // Assuming `scene` is your SCNScene
+        // Add ringNode to the scene
         scene.rootNode.addChildNode(ringNode)
-        
-        
-        
         
         camera.fieldOfView = 20
         cameraNode.camera = camera
@@ -126,16 +122,17 @@ extension SceneViewContainer {
     func updateSceneView(_ sceneView: SCNView) {
         if let capNode = sceneView.scene?.rootNode.childNode(withName: "cap", recursively: true) {
             let currentAngle = capNode.eulerAngles.y
+            let showRing = showRing
             let targetAngle = degreesToRadians(capRotationY)
             let shortestPath = shortestAngleDifference(from: Float(currentAngle), to: targetAngle)
             
             SCNTransaction.begin()
             SCNTransaction.animationDuration = 1
             
-            
-      
             capNode.eulerAngles.y = currentAngle + shortestPath
             
+            // Animate the visibility change of the ringNode
+            ringNode.isHidden = showRing
             
             SCNTransaction.commit()
         }
@@ -186,13 +183,25 @@ struct ContentView: View {
     @ObservedObject var bluetoothManager = BluetoothManager()
     @Environment(\.colorScheme) var colorScheme
     @State var presentSheet = false
+    @State var selectedButton = false
     @State private var isDeviceConnected = false
     @State private var selectedPeripheral: CBPeripheral?
     
+    
+    
+    
+    
     var body: some View {
+        
+        
+        
         NavigationView {
             VStack {
-                SquareBoxView(bluetoothManager: bluetoothManager)
+                
+               
+                
+                
+                SquareBoxView(bluetoothManager: bluetoothManager, showRing: $selectedButton )
                 Spacer()
                 
                 
@@ -344,121 +353,6 @@ struct WindowBackgroundColorView: View {
     }
 }
 
-struct SheetView: View {
-    @State private var selectedButton: Int? = 1
-    @StateObject private var viewModel = ReportViewModel()
-    
-    var body: some View {
-        
-        VStack {
-                  HStack(spacing: 10) {
-                      Button(action: {
-                          HapticFeedbackManager.shared.playImpactFeedback()
-                          withAnimation {
-                        selectedButton = 1
-                         }
-
-                        
-                      }) {
-                          Text("Action")
-                              .frame(maxWidth: .infinity)
-                              .padding()
-                              .background(Color.black.opacity(0.3))
-                              .foregroundColor(.white)
-                              .cornerRadius(15)
-                              .overlay(
-                                  RoundedRectangle(cornerRadius: 15)
-                                      .stroke(selectedButton == 1 ? Color.blue : Color.clear, lineWidth: 2)
-                              )
-                      }
-                      .onPressGesture(
-                          minimumDuration: 0.0,
-                          perform: {
-                              HapticFeedbackManager.shared.playImpactFeedback() // Play haptic feedback on press
-                          },
-                          onPressingChanged: { pressing in
-                              if !pressing {
-                                  HapticFeedbackManager.shared.playImpactFeedback() // Play haptic feedback on release
-                              }
-                          }
-                      )
-
-                      Button(action: {
-                          HapticFeedbackManager.shared.playImpactFeedback()
-                          withAnimation {
-                              selectedButton = 2
-                              viewModel.isEditing = false
-                              UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
-
-                          }
-                      }) {
-                          Text("Sensitivity")
-                              .frame(maxWidth: .infinity)
-                              .padding()
-                              .background(Color.black.opacity(0.3))
-                              .foregroundColor(.white)
-                              .cornerRadius(15)
-                              
-                              .overlay(
-                                  RoundedRectangle(cornerRadius: 15)
-                                      .stroke(selectedButton == 2 ? Color.blue : Color.clear, lineWidth: 2)
-                              )
-                      }
-                      .onPressGesture(
-                          minimumDuration: 0.0,
-                          perform: {
-                              HapticFeedbackManager.shared.playImpactFeedback() // Play haptic feedback on press
-                          },
-                          onPressingChanged: { pressing in
-                              if !pressing {
-                                  HapticFeedbackManager.shared.playImpactFeedback() // Play haptic feedback on release
-                              }
-                          }
-                      )
-                      
-                      
-                  }
-                  .frame(maxWidth: .infinity) // Make HStack take full width
-                  .padding([.top, .leading, .trailing])
-                  .padding(.bottom, 5)
-//                    .border(.red)
-            
-            if selectedButton == 1 {
-                
-//                ActionView()
-                ReportListView(bluetoothManager: BluetoothManager())
-                
-                    .transition(.scale(scale: 0.8, anchor: UnitPoint(x: 0, y: 0)).combined(with: .move(edge: .leading)))
-                
-                
-//                    .transition(.move(edge: .leading).combined(with: .scale(0.5))) // Add fade transition
-//                    .transition(.move(edge: .leading).combined(with: .scale(0.8, anchor: UnitPoint(x: 0, y: 0)))) // Add fade transition
-                    
-                
-            }else {
-                
-                SensitivityView(bluetoothManager: BluetoothManager())
-                    
-//                    .transition(.move(edge: .trailing)) // Add fade transition
-//                    .transition(.move(edge: .trailing).combined(with: .scale(0.8, anchor: UnitPoint(x: 0, y: 0)))) // Add fade transition
-//                    .transition(.move(edge: .trailing).combined(with: .scale(0.5)))
-                
-                    .transition(.scale(scale: 0.8, anchor: UnitPoint(x: 1, y: 0)).combined(with: .move(edge: .trailing)))
-                    
-                
-            }
-            
-            
-               
-              }
-        
-              .frame(maxHeight: .infinity, alignment: .top) // Make VStack stick to the top
-              .padding()
-        
-        
-        
-    }
-}
 
 
 struct SensitivityView: View {
@@ -862,17 +756,16 @@ struct ListView: View {
 
 struct SquareBoxView: View {
     @ObservedObject var bluetoothManager: BluetoothManager
+    @Binding var showRing: Bool
+    
     var body: some View {
         
         SceneViewContainer(
             
-            capRotationY: .constant(Float(bluetoothManager.uint16Value)
-//                .constant(Float(bluetoothManager.uint16Value))
-            
-                                   )
-        
+            capRotationY: .constant(Float(bluetoothManager.uint16Value)), showRing: .constant(showRing)
         
         )
+        
 //        .border(.red)
         .frame(maxWidth: UIScreen.screenWidth, maxHeight: UIScreen.screenWidth)
         .background(WindowBackgroundColorView())

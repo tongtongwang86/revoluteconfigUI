@@ -66,3 +66,11 @@ struct DeviceSelectionView: View {
         }
     }
 }
+
+
+struct DeviceSelectionView_Previews: PreviewProvider {
+    static var previews: some View {
+        @State var isDeviceConnected = true
+        DeviceSelectionView(bluetoothManager: BluetoothManager(), isDeviceConnected: $isDeviceConnected)
+    }
+}
