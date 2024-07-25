@@ -21,7 +21,8 @@ struct SceneViewContainer: UIViewRepresentable {
         let sceneView = SCNView()
         sceneView.scene = makeScene()
         sceneView.autoenablesDefaultLighting = true
-        sceneView.allowsCameraControl = false
+        sceneView.allowsCameraControl = true
+        
         updateBackgroundColor(sceneView: sceneView)
         return sceneView
     }
@@ -50,6 +51,60 @@ extension SceneViewContainer {
         
         let cameraNode = SCNNode()
         let camera = SCNCamera()
+        
+        
+        func highResCircularPath(center: CGPoint, radius: CGFloat, segments: Int) -> UIBezierPath {
+            let path = UIBezierPath()
+            let angleIncrement = (CGFloat.pi * 2) / CGFloat(segments)
+            
+            for i in 0..<segments {
+                let angle = angleIncrement * CGFloat(i)
+                let point = CGPoint(x: center.x + radius * cos(angle), y: center.y + radius * sin(angle))
+                
+                if i == 0 {
+                    path.move(to: point)
+                } else {
+                    path.addLine(to: point)
+                }
+            }
+            path.close()
+            return path
+        }
+
+        // Define outer and inner circles with increased resolution
+        let outerRadius: CGFloat = 1.9
+        let innerRadius: CGFloat = 1.8
+        let center = CGPoint(x: 0, y: 0)
+        let segments = 100 // Increase this value for higher resolution
+
+        let outerCirclePath = highResCircularPath(center: center, radius: outerRadius, segments: segments)
+        let innerCirclePath = highResCircularPath(center: center, radius: innerRadius, segments: segments)
+
+        // Combine paths to create a ring
+        outerCirclePath.append(innerCirclePath.reversing())
+
+        let material = SCNMaterial()
+        material.diffuse.contents = UIColor.white
+        material.emission.contents = UIColor.white
+        material.isDoubleSided = true
+
+        let ringShape = SCNShape(path: outerCirclePath, extrusionDepth: 0.05)
+        ringShape.materials = [material]
+
+        let ringNode = SCNNode()
+        ringNode.geometry = ringShape
+
+        // Rotate the ring 90 degrees along the Z-axis
+        ringNode.eulerAngles.x = .pi / 2
+        ringNode.position = SCNVector3(0, 0.3,0 )
+        
+
+        // Assuming `scene` is your SCNScene
+        scene.rootNode.addChildNode(ringNode)
+        
+        
+        
+        
         camera.fieldOfView = 20
         cameraNode.camera = camera
         cameraNode.position = SCNVector3(x: 4, y: 5, z: 10)
@@ -77,11 +132,10 @@ extension SceneViewContainer {
             SCNTransaction.begin()
             SCNTransaction.animationDuration = 1
             
-            #if os(macOS)
-            capNode.eulerAngles.y = currentAngle + CGFloat(shortestPath)
-            #else
+            
+      
             capNode.eulerAngles.y = currentAngle + shortestPath
-            #endif
+            
             
             SCNTransaction.commit()
         }
@@ -814,6 +868,7 @@ struct SquareBoxView: View {
             
             capRotationY: .constant(Float(bluetoothManager.uint16Value)
 //                .constant(Float(bluetoothManager.uint16Value))
+            
                                    )
         
         
