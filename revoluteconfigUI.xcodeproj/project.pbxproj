@@ -20,6 +20,8 @@
 		BB6F1C392C515EED000696CB /* reports.json in Resources */ = {isa = PBXBuildFile; fileRef = BB6F1C382C515EEC000696CB /* reports.json */; };
 		BB72FB8C2C5189AA002CC22A /* BluetoothManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB72FB8A2C5189A7002CC22A /* BluetoothManager.swift */; };
 		BB72FB8E2C518A25002CC22A /* DeviceSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB72FB8D2C518A25002CC22A /* DeviceSelectionView.swift */; };
+		BB72FB962C52800A002CC22A /* Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB72FB952C52800A002CC22A /* Scene.swift */; };
+		BBF4F9EB2C578EBF00C428B1 /* identvisual.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF4F9EA2C578EBF00C428B1 /* identvisual.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +59,9 @@
 		BB72FB892C518850002CC22A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		BB72FB8A2C5189A7002CC22A /* BluetoothManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BluetoothManager.swift; path = revoluteconfigUI/BluetoothManager.swift; sourceTree = SOURCE_ROOT; };
 		BB72FB8D2C518A25002CC22A /* DeviceSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceSelectionView.swift; sourceTree = "<group>"; };
+		BB72FB952C52800A002CC22A /* Scene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scene.swift; sourceTree = "<group>"; };
+		BBF4F9E92C5772B800C428B1 /* identview.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = identview.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		BBF4F9EA2C578EBF00C428B1 /* identvisual.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = identvisual.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,10 +115,13 @@
 				BB72FB892C518850002CC22A /* Info.plist */,
 				BB16F0912C4FEF130040421D /* revoluteconfigUIApp.swift */,
 				BB16F0932C4FEF130040421D /* ContentView.swift */,
+				BB72FB952C52800A002CC22A /* Scene.swift */,
 				BB72FB8A2C5189A7002CC22A /* BluetoothManager.swift */,
 				BB6F1C382C515EEC000696CB /* reports.json */,
 				BB6F1C362C515D99000696CB /* TestListView.swift */,
 				BB72FB8D2C518A25002CC22A /* DeviceSelectionView.swift */,
+				BBF4F9EA2C578EBF00C428B1 /* identvisual.swift */,
+				BBF4F9E92C5772B800C428B1 /* identview.playground */,
 				BB6F1C332C50D25F000696CB /* Objects */,
 				BB16F0952C4FEF140040421D /* Assets.xcassets */,
 				BB16F0972C4FEF140040421D /* Preview Content */,
@@ -290,6 +298,8 @@
 			files = (
 				BB6F1C372C515D99000696CB /* TestListView.swift in Sources */,
 				BB16F0942C4FEF130040421D /* ContentView.swift in Sources */,
+				BB72FB962C52800A002CC22A /* Scene.swift in Sources */,
+				BBF4F9EB2C578EBF00C428B1 /* identvisual.swift in Sources */,
 				BB72FB8C2C5189AA002CC22A /* BluetoothManager.swift in Sources */,
 				BB16F0922C4FEF130040421D /* revoluteconfigUIApp.swift in Sources */,
 				BB72FB8E2C518A25002CC22A /* DeviceSelectionView.swift in Sources */,
