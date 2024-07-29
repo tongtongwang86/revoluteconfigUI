@@ -87,7 +87,7 @@ struct SceneKitView: UIViewRepresentable {
                     if i < self.capsuleNodes.count {
                         // Update existing capsule
                         let capsulposition = self.capsuleNodes[i]
-                        capsulposition.position = SCNVector3(x: x, y: 0.45, z: z)
+                        capsulposition.position = SCNVector3(x: x, y: 0.5, z: z)
                     } else {
                         // Add new capsule
                         let capsuleNode = SCNNode()
@@ -97,16 +97,17 @@ struct SceneKitView: UIViewRepresentable {
                         
                         material.emission.contents = UIColor.white
 
-                        capsuleNode.geometry = SCNCapsule(capRadius: 0.02, height: 0.1)
+                        capsuleNode.geometry = SCNCapsule(capRadius: 0.01, height: 0.2)
                         capsuleNode.eulerAngles = SCNVector3(x: self.degreesToRadians(90), y: 0, z: 0)
 
                         capsuleNode.geometry?.materials = [material]
+                        
                         capsulposition.addChildNode(capsuleNode)
 
-                        capsulposition.position = SCNVector3(x: x, y: 0, z: z)
+                        capsulposition.position = SCNVector3(x: x, y: 0.5, z: z)
                         capsulposition.eulerAngles = SCNVector3(x: 0, y: 0, z: self.degreesToRadians(90))
 //                        nodeLookAt.geometry = SCNSphere(radius: 1)
-                        nodeLookAt.position = SCNVector3(x: 0, y: 0.45, z: 0)
+                        nodeLookAt.position = SCNVector3(x: 0, y: 0.5, z: 0)
                         scene.rootNode.addChildNode(nodeLookAt)
                         // Point the capsule towards the origin
                         let lookAtOrigin = SCNLookAtConstraint(target: nodeLookAt)
@@ -180,12 +181,14 @@ struct SceneKitView: UIViewRepresentable {
 
         // Create the torus node
         let material = SCNMaterial()
-        material.emission.contents = UIColor.white
+        material.emission.contents = UIColor.blue
+        material.transparency = 0.2
         
         let torus = SCNNode()
-        torus.geometry = SCNTorus(ringRadius: 1.4, pipeRadius: 0.005)
+        torus.geometry = SCNTorus(ringRadius: 1.5, pipeRadius: 0.01)
+        
         torus.geometry?.materials = [material]
-        torus.position = SCNVector3(x: 0, y: 0.45, z: 0)
+        torus.position = SCNVector3(x: 0, y: 0.5, z: 0)
         scene.rootNode.addChildNode(torus)
         context.coordinator.torusNode = torus
 
@@ -236,7 +239,7 @@ struct identview: PreviewProvider {
    
     
     static var previews: some View {
-        @State var numberOfCapsulesDouble: Int = 8
+        @State var numberOfCapsulesDouble: Int = 40
         @State var showTorusAndCapsules: Bool = true
         @State var capRotationY: Float = 69  // State variable for y-rotation of cap
         
