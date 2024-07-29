@@ -12,7 +12,6 @@ import SceneKit
 struct identviewa: View {
     @State private var numberOfCapsulesDouble: Double = 8
     @State private var showTorusAndCapsules: Bool = true
-    @State private var timer: Timer?
 
     var body: some View {
         VStack {
@@ -21,12 +20,6 @@ struct identviewa: View {
                 .background(Color.gray)
             Slider(value: $numberOfCapsulesDouble, in: 2...40, step: 1)
                 .padding()
-                .onChange(of: numberOfCapsulesDouble) { newValue in
-                    timer?.invalidate()
-                    timer = Timer.scheduledTimer(withTimeInterval: 0.2, repeats: false) { _ in
-                        numberOfCapsulesDouble = newValue
-                    }
-                }
             Text("Number of Capsules: \(Int(numberOfCapsulesDouble))")
                 .padding()
             Button(action: {
