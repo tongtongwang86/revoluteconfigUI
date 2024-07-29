@@ -25,17 +25,20 @@ import SwiftUI
 import CoreBluetooth
 
 struct ContentView: View {
+    @State var IdentPerRevolution: Int = 30
     @ObservedObject var bluetoothManager = BluetoothManager()
     @Environment(\.colorScheme) var colorScheme
     @State var ShowRing: Bool = false
     @State var presentSheet = false
     @State private var isDeviceConnected = false
     @State private var selectedPeripheral: CBPeripheral?
+    @State var numberOfCapsulesDouble: Double = 30
     
     var body: some View {
         NavigationView {
             VStack {
-                SquareBoxView(bluetoothManager: bluetoothManager, ShowRing: $ShowRing)
+//                SquareBoxView(bluetoothManager: bluetoothManager, ShowRing: $ShowRing)
+                identviewa(numberOfCapsulesInt: $IdentPerRevolution, showTorusAndCapsules: $ShowRing, capRotationY: .constant(Float(bluetoothManager.uint16Value)))
                 Spacer()
                 
                 
@@ -43,6 +46,10 @@ struct ContentView: View {
                 Text("Waiting for revolute...")
                                 .font(.title)
                                 .padding(.top, 20)
+                
+                Button("opensheet") {
+                    presentSheet = true
+                }
 
                             List(bluetoothManager.availableDevices + bluetoothManager.connectedDevices, id: \.identifier) { peripheral in
                                 HStack {
@@ -139,10 +146,11 @@ struct ContentView: View {
             )
         }
         .sheet(isPresented: $presentSheet) {
-            SheetView(showRing: $ShowRing)
+            SheetView(IdentPerRevolution: $IdentPerRevolution, showRing: $ShowRing)
                 .presentationDetents([.fraction(0.75), .large])
                 .presentationCornerRadius(50)
                 .interactiveDismissDisabled(true)
+                .presentationBackgroundInteraction(.enabled)
         }
         .navigationViewStyle(StackNavigationViewStyle()) // This line can help ensure that the nav view style is correct on all devices
         .hiddenNavigationBar() // Custom modifier to hide the navigation bar
@@ -188,6 +196,8 @@ struct WindowBackgroundColorView: View {
 }
 
 struct SheetView: View {
+    @Binding var IdentPerRevolution: Int //set default
+    @State var deadZone: Int = 1 //set default
     @State private var selectedButton: Int? = 1
     @StateObject private var viewModel = ReportViewModel()
     @Binding var showRing: Bool
@@ -284,7 +294,7 @@ struct SheetView: View {
                 
                 
                 
-                SensitivityView(bluetoothManager: BluetoothManager())
+                SensitivityView(IdentPerRevolution: $IdentPerRevolution, deadZone: $deadZone, bluetoothManager: BluetoothManager())
                     
 //                    .transition(.move(edge: .trailing)) // Add fade transition
 //                    .transition(.move(edge: .trailing).combined(with: .scale(0.8, anchor: UnitPoint(x: 0, y: 0)))) // Add fade transition
@@ -310,9 +320,9 @@ struct SheetView: View {
 
 struct SensitivityView: View {
     
-    @State private var IdentPerRevolution: Int = 30 //set default
-    @State private var deadZone: Int = 1 //set default
-    @State private var rating3: Int = 50
+    @Binding var IdentPerRevolution: Int  //set default
+    @Binding var deadZone: Int  //set default
+//    @State private var rating3: Int = 50
     @ObservedObject var bluetoothManager: BluetoothManager
     
     @State private var sliderValue1: Double = 0.5

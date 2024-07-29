@@ -15,36 +15,25 @@ import Foundation
 import SwiftUI
 import SceneKit
 
+
 struct identviewa: View {
-    @State private var numberOfCapsulesDouble: Double = 8
-    @State private var showTorusAndCapsules: Bool = true
-    @State private var capRotationY: Float = 0.0 // State variable for y-rotation of cap
+    @Binding var numberOfCapsulesInt: Int
+    var numberOfCapsulesDouble: Double {
+        Double(numberOfCapsulesInt)
+    }
+    @Binding var showTorusAndCapsules: Bool
+    @Binding var capRotationY: Float  // State variable for y-rotation of cap
 
     var body: some View {
-        VStack {
+        
             SceneKitView(numberOfCapsules: Int(numberOfCapsulesDouble), showTorusAndCapsules: $showTorusAndCapsules, capRotationY: $capRotationY)
-                .frame(width: 400, height: 400)
+                
                 .background(Color.clear)
-            Slider(value: $numberOfCapsulesDouble, in: 2...40, step: 1)
-                .padding()
-            Text("Number of Capsules: \(Int(numberOfCapsulesDouble))")
-                .padding()
-            Button(action: {
-                withAnimation {
-                    showTorusAndCapsules.toggle()
-                }
-            }) {
-                Text(showTorusAndCapsules ? "Hide Torus and Capsules" : "Show Torus and Capsules")
-                    .padding()
-                    .background(Color.blue)
-                    .foregroundColor(.white)
-                    .cornerRadius(8)
-            }
-            Slider(value: $capRotationY, in: 0...360, step: 1)
-                .padding()
-            Text("Cap Y-Rotation: \(Int(capRotationY))°")
-                .padding()
-        }
+                .frame(maxWidth: UIScreen.screenWidth, maxHeight: UIScreen.screenWidth)
+                .background(WindowBackgroundColorView())
+                .edgesIgnoringSafeArea(.top)
+            
+        
     }
 }
 
@@ -98,14 +87,15 @@ struct SceneKitView: UIViewRepresentable {
                     if i < self.capsuleNodes.count {
                         // Update existing capsule
                         let capsulposition = self.capsuleNodes[i]
-                        capsulposition.position = SCNVector3(x: x, y: 0, z: z)
+                        capsulposition.position = SCNVector3(x: x, y: 0.45, z: z)
                     } else {
                         // Add new capsule
                         let capsuleNode = SCNNode()
                         let capsulposition = SCNNode()
+                        let nodeLookAt = SCNNode()
                         let material = SCNMaterial()
-
-                        material.emission.contents = UIColor.red
+                        
+                        material.emission.contents = UIColor.white
 
                         capsuleNode.geometry = SCNCapsule(capRadius: 0.02, height: 0.1)
                         capsuleNode.eulerAngles = SCNVector3(x: self.degreesToRadians(90), y: 0, z: 0)
@@ -115,9 +105,11 @@ struct SceneKitView: UIViewRepresentable {
 
                         capsulposition.position = SCNVector3(x: x, y: 0, z: z)
                         capsulposition.eulerAngles = SCNVector3(x: 0, y: 0, z: self.degreesToRadians(90))
-
+//                        nodeLookAt.geometry = SCNSphere(radius: 1)
+                        nodeLookAt.position = SCNVector3(x: 0, y: 0.45, z: 0)
+                        scene.rootNode.addChildNode(nodeLookAt)
                         // Point the capsule towards the origin
-                        let lookAtOrigin = SCNLookAtConstraint(target: scene.rootNode)
+                        let lookAtOrigin = SCNLookAtConstraint(target: nodeLookAt)
                         capsulposition.constraints = [lookAtOrigin]
 
                         scene.rootNode.addChildNode(capsulposition)
@@ -177,12 +169,23 @@ struct SceneKitView: UIViewRepresentable {
         let camera = SCNCamera()
         camera.fieldOfView = 20
         cameraNode.camera = camera
-        cameraNode.position = SCNVector3(x: 0, y: 0, z: 15)
+//        cameraNode.position = SCNVector3(x: 0, y: 0, z: 15)
+        cameraNode.position = SCNVector3(x: 4, y: 5, z: 10)
+        cameraNode.eulerAngles = SCNVector3(x: degreesToRadians(27), y: 0, z: 0)
+        
+        let lookAtOrigin = SCNLookAtConstraint(target: scene.rootNode)
+        cameraNode.constraints = [lookAtOrigin]
+        
         scene.rootNode.addChildNode(cameraNode)
 
         // Create the torus node
+        let material = SCNMaterial()
+        material.emission.contents = UIColor.white
+        
         let torus = SCNNode()
-        torus.geometry = SCNTorus(ringRadius: 1.4, pipeRadius: 0.003)
+        torus.geometry = SCNTorus(ringRadius: 1.4, pipeRadius: 0.005)
+        torus.geometry?.materials = [material]
+        torus.position = SCNVector3(x: 0, y: 0.45, z: 0)
         scene.rootNode.addChildNode(torus)
         context.coordinator.torusNode = torus
 
@@ -230,7 +233,37 @@ struct SceneKitView: UIViewRepresentable {
 }
 
 struct identview: PreviewProvider {
+   
+    
     static var previews: some View {
-        identviewa()
+        @State var numberOfCapsulesDouble: Int = 8
+        @State var showTorusAndCapsules: Bool = true
+        @State var capRotationY: Float = 69  // State variable for y-rotation of cap
+        
+        VStack{
+            identviewa(numberOfCapsulesInt: $numberOfCapsulesDouble, showTorusAndCapsules: $showTorusAndCapsules, capRotationY: $capRotationY)
+            
+//            Slider(value: $numberOfCapsulesDouble, in: 2...40, step: 1)
+//                .padding()
+            Text("Number of Capsules: \(Int(numberOfCapsulesDouble))")
+                .padding()
+            Button(action: {
+                withAnimation {
+                    showTorusAndCapsules.toggle()
+                }
+            }) {
+                Text(showTorusAndCapsules ? "Hide Torus and Capsules" : "Show Torus and Capsules")
+                    .padding()
+                    .background(Color.blue)
+                    .foregroundColor(.white)
+                    .cornerRadius(8)
+            }
+            Slider(value: $capRotationY, in: 0...360, step: 1)
+                .padding()
+            Text("Cap Y-Rotation: \(Int(capRotationY))°")
+                .padding()
+            
+        }
+        
     }
 }
