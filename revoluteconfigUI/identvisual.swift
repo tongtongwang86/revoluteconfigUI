@@ -4,6 +4,12 @@
 //
 //  Created by Tong tong wang on 29/07/2024.
 //
+//
+//  identvisual.swift
+//  revoluteconfigUI
+//
+//  Created by Tong tong wang on 29/07/2024.
+//
 
 import Foundation
 import SwiftUI
@@ -12,18 +18,21 @@ import SceneKit
 struct identviewa: View {
     @State private var numberOfCapsulesDouble: Double = 8
     @State private var showTorusAndCapsules: Bool = true
+    @State private var capRotationY: Float = 0.0 // State variable for y-rotation of cap
 
     var body: some View {
         VStack {
-            SceneKitView(numberOfCapsules: Int(numberOfCapsulesDouble), showTorusAndCapsules: $showTorusAndCapsules)
-                .frame(width: 600, height: 600)
-                .background(Color.gray)
+            SceneKitView(numberOfCapsules: Int(numberOfCapsulesDouble), showTorusAndCapsules: $showTorusAndCapsules, capRotationY: $capRotationY)
+                .frame(width: 400, height: 400)
+                .background(Color.clear)
             Slider(value: $numberOfCapsulesDouble, in: 2...40, step: 1)
                 .padding()
             Text("Number of Capsules: \(Int(numberOfCapsulesDouble))")
                 .padding()
             Button(action: {
-                showTorusAndCapsules.toggle()
+                withAnimation {
+                    showTorusAndCapsules.toggle()
+                }
             }) {
                 Text(showTorusAndCapsules ? "Hide Torus and Capsules" : "Show Torus and Capsules")
                     .padding()
@@ -31,6 +40,10 @@ struct identviewa: View {
                     .foregroundColor(.white)
                     .cornerRadius(8)
             }
+            Slider(value: $capRotationY, in: 0...360, step: 1)
+                .padding()
+            Text("Cap Y-Rotation: \(Int(capRotationY))°")
+                .padding()
         }
     }
 }
@@ -38,27 +51,33 @@ struct identviewa: View {
 struct SceneKitView: UIViewRepresentable {
     var numberOfCapsules: Int
     @Binding var showTorusAndCapsules: Bool
+    @Binding var capRotationY: Float // Binding for y-rotation of cap
 
     class Coordinator: NSObject {
         var parent: SceneKitView
         var capsuleNodes: [SCNNode] = []
         var torusNode: SCNNode?
+        var capNode: SCNNode?
 
         init(parent: SceneKitView) {
             self.parent = parent
         }
 
         func updateVisibility() {
-            torusNode?.isHidden = !parent.showTorusAndCapsules
+            SCNTransaction.begin()
+            SCNTransaction.animationDuration = 0.5 // Adjust animation duration as needed
+            let targetOpacity: CGFloat = parent.showTorusAndCapsules ? 1.0 : 0.0
+            torusNode?.opacity = targetOpacity
             for node in capsuleNodes {
-                node.isHidden = !parent.showTorusAndCapsules
+                node.opacity = targetOpacity
             }
+            SCNTransaction.commit()
         }
 
         func updateCapsules(numberOfCapsules: Int, scene: SCNScene) {
             DispatchQueue.global(qos: .userInitiated).async {
                 // Calculate new positions and angles
-                let radius: Float = 1.0
+                let radius: Float = 1.5
                 let angleIncrement = self.degreesToRadians(360.0 / Float(numberOfCapsules))
 
                 SCNTransaction.begin()
@@ -86,13 +105,12 @@ struct SceneKitView: UIViewRepresentable {
                         let capsulposition = SCNNode()
                         let material = SCNMaterial()
 
-                        material.emission.contents = UIColor.white
+                        material.emission.contents = UIColor.red
 
-                        capsulposition.geometry = SCNBox()
                         capsuleNode.geometry = SCNCapsule(capRadius: 0.02, height: 0.1)
                         capsuleNode.eulerAngles = SCNVector3(x: self.degreesToRadians(90), y: 0, z: 0)
 
-                        capsulposition.geometry?.materials = [material]
+                        capsuleNode.geometry?.materials = [material]
                         capsulposition.addChildNode(capsuleNode)
 
                         capsulposition.position = SCNVector3(x: x, y: 0, z: z)
@@ -115,6 +133,14 @@ struct SceneKitView: UIViewRepresentable {
             }
         }
 
+        func updateCapRotation() {
+            guard let capNode = self.capNode else { return }
+            SCNTransaction.begin()
+            SCNTransaction.animationDuration = 0.5
+            capNode.eulerAngles.y = degreesToRadians(parent.capRotationY)
+            SCNTransaction.commit()
+        }
+
         func degreesToRadians(_ degrees: Float) -> Float {
             return degrees * .pi / 180
         }
@@ -129,10 +155,22 @@ struct SceneKitView: UIViewRepresentable {
         sceneView.allowsCameraControl = true
         sceneView.autoenablesDefaultLighting = true
         sceneView.showsStatistics = true
-        sceneView.debugOptions = [.renderAsWireframe, SCNDebugOptions(rawValue: 2048)]
-
+        sceneView.backgroundColor = .clear // Set background color to clear
+        
         // Create the scene
         let scene = SCNScene()
+        
+        if let baseScene = SCNScene(named: "base.usdz") {
+            let baseNode = baseScene.rootNode.clone()
+            baseNode.name = "base"
+            scene.rootNode.addChildNode(baseNode)
+        }
+        
+        if let capScene = SCNScene(named: "cap.usdz") {
+            let capNode = capScene.rootNode.clone()
+            capNode.name = "cap"
+            scene.rootNode.addChildNode(capNode)
+        }
 
         // Create a camera node
         let cameraNode = SCNNode()
@@ -144,7 +182,7 @@ struct SceneKitView: UIViewRepresentable {
 
         // Create the torus node
         let torus = SCNNode()
-        torus.geometry = SCNTorus(ringRadius: 1, pipeRadius: 0.2)
+        torus.geometry = SCNTorus(ringRadius: 1.4, pipeRadius: 0.003)
         scene.rootNode.addChildNode(torus)
         context.coordinator.torusNode = torus
 
@@ -154,13 +192,42 @@ struct SceneKitView: UIViewRepresentable {
     }
 
     func updateUIView(_ uiView: SCNView, context: Context) {
+        if let capNode = uiView.scene?.rootNode.childNode(withName: "cap", recursively: true) {
+            let currentAngle = capNode.eulerAngles.y
+            let targetAngle = degreesToRadians(capRotationY)
+            let shortestPath = shortestAngleDifference(from: Float(currentAngle), to: targetAngle)
+            
+            SCNTransaction.begin()
+            SCNTransaction.animationDuration = 1
+            capNode.eulerAngles.y = currentAngle + shortestPath
+            SCNTransaction.commit()
+        }
+        
         if let scene = uiView.scene {
             context.coordinator.updateCapsules(numberOfCapsules: numberOfCapsules, scene: scene)
             context.coordinator.updateVisibility()
+            context.coordinator.updateCapRotation() // Update the cap rotation
         }
     }
-}
 
+    func degreesToRadians(_ degrees: Float) -> Float {
+        return degrees * .pi / 180
+    }
+
+    func shortestAngleDifference(from start: Float, to end: Float) -> Float {
+        let twoPi: Float = 2 * .pi
+        var diff = end - start
+        
+        while diff > .pi {
+            diff -= twoPi
+        }
+        while diff < -.pi {
+            diff += twoPi
+        }
+        
+        return diff
+    }
+}
 
 struct identview: PreviewProvider {
     static var previews: some View {
