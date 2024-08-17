@@ -5,162 +5,7 @@
 //  Created by Tong tong wang on 23/07/2024.
 //
 
-extension UIScreen{
-   static let screenWidth = UIScreen.main.bounds.size.width
-   static let screenHeight = UIScreen.main.bounds.size.height
-   static let screenSize = UIScreen.main.bounds.size
-}
 
-import SceneKit
-
-struct SceneViewContainer: UIViewRepresentable {
-    @Binding var capRotationY: Float
-    @Environment(\.colorScheme) var colorScheme
-    @Binding var showRing: Bool
-    var ringNode = SCNNode()
-
-    func makeUIView(context: Context) -> SCNView {
-        let sceneView = SCNView()
-        sceneView.scene = makeScene()
-        sceneView.autoenablesDefaultLighting = true
-        sceneView.allowsCameraControl = true
-        
-        updateBackgroundColor(sceneView: sceneView)
-        return sceneView
-    }
-    
-    func updateUIView(_ uiView: SCNView, context: Context) {
-        updateSceneView(uiView)
-    }
-}
-
-
-extension SceneViewContainer {
-    func makeScene() -> SCNScene {
-        let scene = SCNScene()
-        
-        if let baseScene = SCNScene(named: "base.usdz") {
-            let baseNode = baseScene.rootNode.clone()
-            baseNode.name = "base"
-            scene.rootNode.addChildNode(baseNode)
-        }
-        
-        if let capScene = SCNScene(named: "cap.usdz") {
-            let capNode = capScene.rootNode.clone()
-            capNode.name = "cap"
-            scene.rootNode.addChildNode(capNode)
-        }
-        
-        let cameraNode = SCNNode()
-        let camera = SCNCamera()
-        
-        func highResCircularPath(center: CGPoint, radius: CGFloat, segments: Int) -> UIBezierPath {
-            let path = UIBezierPath()
-            let angleIncrement = (CGFloat.pi * 2) / CGFloat(segments)
-            
-            for i in 0..<segments {
-                let angle = angleIncrement * CGFloat(i)
-                let point = CGPoint(x: center.x + radius * cos(angle), y: center.y + radius * sin(angle))
-                
-                if i == 0 {
-                    path.move(to: point)
-                } else {
-                    path.addLine(to: point)
-                }
-            }
-            path.close()
-            return path
-        }
-
-        // Define outer and inner circles with increased resolution
-        let outerRadius: CGFloat = 1.9
-        let innerRadius: CGFloat = 1.8
-        let center = CGPoint(x: 0, y: 0)
-        let segments = 100 // Increase this value for higher resolution
-
-        let outerCirclePath = highResCircularPath(center: center, radius: outerRadius, segments: segments)
-        let innerCirclePath = highResCircularPath(center: center, radius: innerRadius, segments: segments)
-
-        // Combine paths to create a ring
-        outerCirclePath.append(innerCirclePath.reversing())
-
-        let material = SCNMaterial()
-        material.diffuse.contents = UIColor.white
-        material.emission.contents = UIColor.white
-        material.isDoubleSided = true
-
-        let ringShape = SCNShape(path: outerCirclePath, extrusionDepth: 0.05)
-        ringShape.materials = [material]
-
-        ringNode.geometry = ringShape
-
-        // Rotate the ring 90 degrees along the Z-axis
-        ringNode.eulerAngles.x = .pi / 2
-        ringNode.position = SCNVector3(0, 0.3,0 )
-        
-        // Add ringNode to the scene
-        scene.rootNode.addChildNode(ringNode)
-        
-        camera.fieldOfView = 20
-        cameraNode.camera = camera
-        cameraNode.position = SCNVector3(x: 4, y: 5, z: 10)
-        #if os(macOS)
-        cameraNode.eulerAngles = SCNVector3(x: CGFloat(degreesToRadians(27)), y: 0, z: 0)
-        #else
-        cameraNode.eulerAngles = SCNVector3(x: degreesToRadians(27), y: 0, z: 0)
-        #endif
-        scene.rootNode.addChildNode(cameraNode)
-        
-        if let capNode = scene.rootNode.childNode(withName: "cap", recursively: true) {
-            let lookAtConstraint = SCNLookAtConstraint(target: capNode)
-            cameraNode.constraints = [lookAtConstraint]
-        }
-        
-        return scene
-    }
-    
-    func updateSceneView(_ sceneView: SCNView) {
-        if let capNode = sceneView.scene?.rootNode.childNode(withName: "cap", recursively: true) {
-            let currentAngle = capNode.eulerAngles.y
-            let showRing = showRing
-            let targetAngle = degreesToRadians(capRotationY)
-            let shortestPath = shortestAngleDifference(from: Float(currentAngle), to: targetAngle)
-            
-            SCNTransaction.begin()
-            SCNTransaction.animationDuration = 1
-            
-            capNode.eulerAngles.y = currentAngle + shortestPath
-            
-            // Animate the visibility change of the ringNode
-            ringNode.isHidden = showRing
-            
-            SCNTransaction.commit()
-        }
-        updateBackgroundColor(sceneView: sceneView)
-    }
-    
-    func degreesToRadians(_ degrees: Float) -> Float {
-        return degrees * .pi / 180
-    }
-
-    func shortestAngleDifference(from start: Float, to end: Float) -> Float {
-        let twoPi: Float = 2 * .pi
-        var diff = end - start
-        
-        while diff > .pi {
-            diff -= twoPi
-        }
-        while diff < -.pi {
-            diff += twoPi
-        }
-        
-        return diff
-    }
-    
-    func updateBackgroundColor(sceneView: SCNView) {
-        sceneView.backgroundColor = .clear
-    }
-}
 
 import UIKit
 
@@ -180,12 +25,15 @@ import SwiftUI
 import CoreBluetooth
 
 struct ContentView: View {
+    @State var IdentPerRevolution: Int = 30
     @ObservedObject var bluetoothManager = BluetoothManager()
     @Environment(\.colorScheme) var colorScheme
+    @State var ShowRing: Bool = false
     @State var presentSheet = false
     @State var selectedButton = false
     @State private var isDeviceConnected = false
     @State private var selectedPeripheral: CBPeripheral?
+    @State var numberOfCapsulesDouble: Double = 30
     
     
     
@@ -197,11 +45,8 @@ struct ContentView: View {
         
         NavigationView {
             VStack {
-                
-               
-                
-                
-                SquareBoxView(bluetoothManager: bluetoothManager, showRing: $selectedButton )
+//                SquareBoxView(bluetoothManager: bluetoothManager, ShowRing: $ShowRing)
+                identviewa(numberOfCapsulesInt: $IdentPerRevolution, showTorusAndCapsules: $ShowRing, capRotationY: .constant(Float(bluetoothManager.uint16Value)))
                 Spacer()
                 
                 
@@ -209,6 +54,10 @@ struct ContentView: View {
                 Text("Waiting for revolute...")
                                 .font(.title)
                                 .padding(.top, 20)
+                
+                Button("opensheet") {
+                    presentSheet = true
+                }
 
                             List(bluetoothManager.availableDevices + bluetoothManager.connectedDevices, id: \.identifier) { peripheral in
                                 HStack {
@@ -305,10 +154,11 @@ struct ContentView: View {
             )
         }
         .sheet(isPresented: $presentSheet) {
-            SheetView()
+            SheetView(IdentPerRevolution: $IdentPerRevolution, showRing: $ShowRing)
                 .presentationDetents([.fraction(0.75), .large])
                 .presentationCornerRadius(50)
                 .interactiveDismissDisabled(true)
+                .presentationBackgroundInteraction(.enabled)
         }
         .navigationViewStyle(StackNavigationViewStyle()) // This line can help ensure that the nav view style is correct on all devices
         .hiddenNavigationBar() // Custom modifier to hide the navigation bar
@@ -353,13 +203,134 @@ struct WindowBackgroundColorView: View {
     }
 }
 
+struct SheetView: View {
+    @Binding var IdentPerRevolution: Int //set default
+    @State var deadZone: Int = 1 //set default
+    @State private var selectedButton: Int? = 1
+    @StateObject private var viewModel = ReportViewModel()
+    @Binding var showRing: Bool
+    var body: some View {
+        
+        VStack {
+                  HStack(spacing: 10) {
+                      Button(action: {
+                          HapticFeedbackManager.shared.playImpactFeedback()
+                          withAnimation {
+                        selectedButton = 1
+                              showRing = false
+                         }
+
+                        
+                      }) {
+                          Text("Action")
+                              .frame(maxWidth: .infinity)
+                              .padding()
+                              .background(Color.black.opacity(0.3))
+                              .foregroundColor(.white)
+                              .cornerRadius(15)
+                              .overlay(
+                                  RoundedRectangle(cornerRadius: 15)
+                                      .stroke(selectedButton == 1 ? Color.blue : Color.clear, lineWidth: 2)
+                              )
+                      }
+                      .onPressGesture(
+                          minimumDuration: 0.0,
+                          perform: {
+                              HapticFeedbackManager.shared.playImpactFeedback() // Play haptic feedback on press
+                          },
+                          onPressingChanged: { pressing in
+                              if !pressing {
+                                  HapticFeedbackManager.shared.playImpactFeedback() // Play haptic feedback on release
+                              }
+                          }
+                      )
+
+                      Button(action: {
+                          HapticFeedbackManager.shared.playImpactFeedback()
+                          withAnimation {
+                              showRing = true
+                              selectedButton = 2
+                              viewModel.isEditing = false
+                              UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+
+                          }
+                      }) {
+                          Text("Sensitivity")
+                              .frame(maxWidth: .infinity)
+                              .padding()
+                              .background(Color.black.opacity(0.3))
+                              .foregroundColor(.white)
+                              .cornerRadius(15)
+                              
+                              .overlay(
+                                  RoundedRectangle(cornerRadius: 15)
+                                      .stroke(selectedButton == 2 ? Color.blue : Color.clear, lineWidth: 2)
+                              )
+                      }
+                      .onPressGesture(
+                          minimumDuration: 0.0,
+                          perform: {
+                              HapticFeedbackManager.shared.playImpactFeedback() // Play haptic feedback on press
+                          },
+                          onPressingChanged: { pressing in
+                              if !pressing {
+                                  HapticFeedbackManager.shared.playImpactFeedback() // Play haptic feedback on release
+                              }
+                          }
+                      )
+                      
+                      
+                  }
+                  .frame(maxWidth: .infinity) // Make HStack take full width
+                  .padding([.top, .leading, .trailing])
+                  .padding(.bottom, 5)
+//                    .border(.red)
+            
+            if selectedButton == 1 {
+                
+//                ActionView()
+                ReportListView(bluetoothManager: BluetoothManager())
+                
+                    .transition(.scale(scale: 0.8, anchor: UnitPoint(x: 0, y: 0)).combined(with: .move(edge: .leading)))
+                
+                
+//                    .transition(.move(edge: .leading).combined(with: .scale(0.5))) // Add fade transition
+//                    .transition(.move(edge: .leading).combined(with: .scale(0.8, anchor: UnitPoint(x: 0, y: 0)))) // Add fade transition
+                
+                
+            }else {
+                
+                
+                
+                SensitivityView(IdentPerRevolution: $IdentPerRevolution, deadZone: $deadZone, bluetoothManager: BluetoothManager())
+                    
+//                    .transition(.move(edge: .trailing)) // Add fade transition
+//                    .transition(.move(edge: .trailing).combined(with: .scale(0.8, anchor: UnitPoint(x: 0, y: 0)))) // Add fade transition
+//                    .transition(.move(edge: .trailing).combined(with: .scale(0.5)))
+                
+                    .transition(.scale(scale: 0.8, anchor: UnitPoint(x: 1, y: 0)).combined(with: .move(edge: .trailing)))
+                    
+                
+            }
+            
+            
+               
+              }
+        
+              .frame(maxHeight: .infinity, alignment: .top) // Make VStack stick to the top
+              .padding()
+        
+        
+        
+    }
+}
 
 
 struct SensitivityView: View {
     
-    @State private var IdentPerRevolution: Int = 30 //set default
-    @State private var deadZone: Int = 1 //set default
-    @State private var rating3: Int = 50
+    @Binding var IdentPerRevolution: Int  //set default
+    @Binding var deadZone: Int  //set default
+//    @State private var rating3: Int = 50
     @ObservedObject var bluetoothManager: BluetoothManager
     
     @State private var sliderValue1: Double = 0.5
@@ -755,14 +726,15 @@ struct ListView: View {
 
 
 struct SquareBoxView: View {
-    @ObservedObject var bluetoothManager: BluetoothManager
-    @Binding var showRing: Bool
     
+    @ObservedObject var bluetoothManager: BluetoothManager
+    @Binding var ShowRing: Bool
     var body: some View {
         
         SceneViewContainer(
             
-            capRotationY: .constant(Float(bluetoothManager.uint16Value)), showRing: .constant(showRing)
+            capRotationY: .constant(Float(bluetoothManager.uint16Value)),
+            showRing: $ShowRing
         
         )
         
