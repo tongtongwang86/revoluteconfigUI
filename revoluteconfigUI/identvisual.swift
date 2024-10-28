@@ -54,7 +54,7 @@ struct SceneKitView: UIViewRepresentable {
 
         func updateVisibility() {
             SCNTransaction.begin()
-            SCNTransaction.animationDuration = 0.5 // Adjust animation duration as needed
+            SCNTransaction.animationDuration = 0.2 // Adjust animation duration as needed
             let targetOpacity: CGFloat = parent.showTorusAndCapsules ? 1.0 : 0.0
             torusNode?.opacity = targetOpacity
             for node in capsuleNodes {
@@ -65,66 +65,79 @@ struct SceneKitView: UIViewRepresentable {
 
         func updateCapsules(numberOfCapsules: Int, scene: SCNScene) {
             DispatchQueue.global(qos: .userInitiated).async {
-                // Calculate new positions and angles
                 let radius: Float = 1.5
                 let angleIncrement = self.degreesToRadians(360.0 / Float(numberOfCapsules))
+                
+                DispatchQueue.main.async {
+                    SCNTransaction.animationDuration = 0.3
 
-                SCNTransaction.begin()
-                SCNTransaction.animationDuration = 0.5 // Adjust animation duration as needed
+                    // Remove excess capsules without using SCNTransaction to avoid stutter
+                    while self.capsuleNodes.count > numberOfCapsules {
+                        if let node = self.capsuleNodes.popLast() {
+                            node.removeFromParentNode()
+                        }
+                    }
+                    
+                    // Add or update capsules in batch
+                    for i in 0..<numberOfCapsules {
+                        let targetAngle = angleIncrement * Float(i)
+                        let x = radius * cos(targetAngle)
+                        let z = radius * sin(targetAngle)
 
-                // Remove excess capsules
-                while self.capsuleNodes.count > numberOfCapsules {
-                    let node = self.capsuleNodes.removeLast()
-                    node.removeFromParentNode()
-                }
+                        if i < self.capsuleNodes.count {
+                            // Update existing capsule with smooth transition
+                            let capsuleNode = self.capsuleNodes[i]
+                            let startAngle = atan2(capsuleNode.position.z, capsuleNode.position.x)
+                            var angleDifference = targetAngle - startAngle
+                            
+                            if abs(angleDifference) > .pi {
+                                angleDifference -= (2 * .pi) * (angleDifference > 0 ? 1 : -1)
+                            }
 
-                // Add new capsules or update existing ones
-                for i in 0..<numberOfCapsules {
-                    let angle = angleIncrement * Float(i)
-                    let x = radius * cos(angle)
-                    let z = radius * sin(angle)
+                            // Animate position with ease-out
+                            let action = SCNAction.customAction(duration: 0.3) { node, time in
+                                let t = time / 0.3
+                                let easeOutT = 1 - pow(1 - t, 3)
+                                let currentAngle = startAngle + angleDifference * Float(easeOutT)
+                                let newX = radius * cos(currentAngle)
+                                let newZ = radius * sin(currentAngle)
+                                capsuleNode.position = SCNVector3(x: newX, y: 0.5, z: newZ)
+                            }
+                            capsuleNode.runAction(action)
+                        } else {
+                            // Reuse or create new capsule as needed
+                            let capsuleNode = SCNNode()
+                            let capsulePositionNode = SCNNode()
+                            let material = SCNMaterial()
+                            
+                            material.emission.contents = UIColor.white
+                            capsuleNode.geometry = SCNCapsule(capRadius: 0.01, height: 0.2)
+                            capsuleNode.eulerAngles = SCNVector3(x: self.degreesToRadians(90), y: 0, z: 0)
+                            capsuleNode.geometry?.materials = [material]
+                            
+                            capsulePositionNode.addChildNode(capsuleNode)
+                            capsulePositionNode.position = SCNVector3(x: x, y: 0.5, z: z)
+                            capsulePositionNode.eulerAngles = SCNVector3(x: 0, y: 0, z: self.degreesToRadians(90))
 
-                    if i < self.capsuleNodes.count {
-                        // Update existing capsule
-                        let capsulposition = self.capsuleNodes[i]
-                        capsulposition.position = SCNVector3(x: x, y: 0.5, z: z)
-                    } else {
-                        // Add new capsule
-                        let capsuleNode = SCNNode()
-                        let capsulposition = SCNNode()
-                        let nodeLookAt = SCNNode()
-                        let material = SCNMaterial()
-                        
-                        material.emission.contents = UIColor.white
+                            let nodeLookAt = SCNNode()
+                            nodeLookAt.position = SCNVector3(x: 0, y: 0.5, z: 0)
+                            scene.rootNode.addChildNode(nodeLookAt)
 
-                        capsuleNode.geometry = SCNCapsule(capRadius: 0.01, height: 0.2)
-                        capsuleNode.eulerAngles = SCNVector3(x: self.degreesToRadians(90), y: 0, z: 0)
+                            let lookAtOrigin = SCNLookAtConstraint(target: nodeLookAt)
+                            capsulePositionNode.constraints = [lookAtOrigin]
 
-                        capsuleNode.geometry?.materials = [material]
-                        
-                        capsulposition.addChildNode(capsuleNode)
+                            scene.rootNode.addChildNode(capsulePositionNode)
+                            self.capsuleNodes.append(capsulePositionNode)
+                        }
+                    }
 
-                        capsulposition.position = SCNVector3(x: x, y: 0.5, z: z)
-                        capsulposition.eulerAngles = SCNVector3(x: 0, y: 0, z: self.degreesToRadians(90))
-//                        nodeLookAt.geometry = SCNSphere(radius: 1)
-                        nodeLookAt.position = SCNVector3(x: 0, y: 0.5, z: 0)
-                        scene.rootNode.addChildNode(nodeLookAt)
-                        // Point the capsule towards the origin
-                        let lookAtOrigin = SCNLookAtConstraint(target: nodeLookAt)
-                        capsulposition.constraints = [lookAtOrigin]
-
-                        scene.rootNode.addChildNode(capsulposition)
-                        self.capsuleNodes.append(capsulposition)
+                    DispatchQueue.main.async {
+                        self.updateVisibility()
                     }
                 }
-
-                DispatchQueue.main.async {
-                    self.updateVisibility()
-                }
-
-                SCNTransaction.commit()
             }
         }
+
 
         func updateCapRotation() {
             guard let capNode = self.capNode else { return }
@@ -149,14 +162,20 @@ struct SceneKitView: UIViewRepresentable {
         sceneView.autoenablesDefaultLighting = true
         sceneView.showsStatistics = true
         sceneView.backgroundColor = .clear // Set background color to clear
+        
         if let gestureRecognizers = sceneView.gestureRecognizers {
-             for recognizer in gestureRecognizers {
-                 if let tapRecognizer = recognizer as? UITapGestureRecognizer,
-                    tapRecognizer.numberOfTapsRequired == 2 {
-                     tapRecognizer.isEnabled = false
-                 }
-             }
-         }
+            for recognizer in gestureRecognizers {
+                if let tapRecognizer = recognizer as? UITapGestureRecognizer, tapRecognizer.numberOfTapsRequired == 2 {
+                    tapRecognizer.isEnabled = false
+                } else if let rotationRecognizer = recognizer as? UIRotationGestureRecognizer {
+                    rotationRecognizer.isEnabled = false
+                } else if let panRecognizer = recognizer as? UIPanGestureRecognizer {
+                    panRecognizer.maximumNumberOfTouches = 1
+                }
+            }
+        }
+        
+        
         // Create the scene
         let scene = SCNScene()
         
@@ -242,21 +261,25 @@ struct SceneKitView: UIViewRepresentable {
     }
 }
 
-struct identview: PreviewProvider {
-   
+struct IdentViewPreviewWrapper: View {
+    @State private var numberOfCapsulesDouble: Double = 40 // Use Double for slider compatibility
+    @State private var showTorusAndCapsules: Bool = true
+    @State private var capRotationY: Float = 69  // State variable for y-rotation of cap
     
-    static var previews: some View {
-        @State var numberOfCapsulesDouble: Int = 40
-        @State var showTorusAndCapsules: Bool = true
-        @State var capRotationY: Float = 69  // State variable for y-rotation of cap
-        
-        VStack{
-            identviewa(numberOfCapsulesInt: $numberOfCapsulesDouble, showTorusAndCapsules: $showTorusAndCapsules, capRotationY: $capRotationY)
+    var body: some View {
+        VStack {
+            // Use Int binding for identviewa if it expects an integer
+            identviewa(numberOfCapsulesInt: .constant(Int(numberOfCapsulesDouble)),
+                       showTorusAndCapsules: $showTorusAndCapsules,
+                       capRotationY: $capRotationY)
             
-//            Slider(value: $numberOfCapsulesDouble, in: 2...40, step: 1)
-//                .padding()
             Text("Number of Capsules: \(Int(numberOfCapsulesDouble))")
                 .padding()
+            
+            // Slider for controlling the number of capsules
+            Slider(value: $numberOfCapsulesDouble, in: 2...40, step: 1)
+                .padding()
+            
             Button(action: {
                 withAnimation {
                     showTorusAndCapsules.toggle()
@@ -268,12 +291,21 @@ struct identview: PreviewProvider {
                     .foregroundColor(.white)
                     .cornerRadius(8)
             }
+            .padding()
+            
+            // Slider for controlling the Y-rotation of the cap
             Slider(value: $capRotationY, in: 0...360, step: 1)
                 .padding()
+            
             Text("Cap Y-Rotation: \(Int(capRotationY))°")
                 .padding()
-            
         }
-        
+        .padding()
+    }
+}
+
+struct identview: PreviewProvider {
+    static var previews: some View {
+        IdentViewPreviewWrapper()
     }
 }
