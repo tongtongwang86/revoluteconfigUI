@@ -149,7 +149,14 @@ struct SceneKitView: UIViewRepresentable {
         sceneView.autoenablesDefaultLighting = true
         sceneView.showsStatistics = true
         sceneView.backgroundColor = .clear // Set background color to clear
-        
+        if let gestureRecognizers = sceneView.gestureRecognizers {
+             for recognizer in gestureRecognizers {
+                 if let tapRecognizer = recognizer as? UITapGestureRecognizer,
+                    tapRecognizer.numberOfTapsRequired == 2 {
+                     tapRecognizer.isEnabled = false
+                 }
+             }
+         }
         // Create the scene
         let scene = SCNScene()
         

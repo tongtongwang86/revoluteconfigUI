@@ -27,6 +27,15 @@ struct SceneViewContainer: UIViewRepresentable {
         sceneView.autoenablesDefaultLighting = true
         sceneView.allowsCameraControl = true
         
+        if let gestureRecognizers = sceneView.gestureRecognizers {
+            for recognizer in gestureRecognizers {
+                if let tapRecognizer = recognizer as? UITapGestureRecognizer,
+                   tapRecognizer.numberOfTapsRequired == 2 {
+                    tapRecognizer.isEnabled = false
+                }
+            }
+        }
+        
         updateBackgroundColor(sceneView: sceneView)
         return sceneView
     }
@@ -169,4 +178,13 @@ extension SceneViewContainer {
     func updateBackgroundColor(sceneView: SCNView) {
         sceneView.backgroundColor = .clear
     }
+}
+
+
+#Preview {
+    
+    let capRotationY: Binding<Float> = .constant(0)
+    let showRing: Binding<Bool> = .constant(true)
+    
+    SceneViewContainer(capRotationY: capRotationY, showRing: showRing)
 }

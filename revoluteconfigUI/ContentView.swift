@@ -393,23 +393,10 @@ struct SensitivityView: View {
                 print(deadZone)
                 
             }
-            
-            
-         
-            
-            
-            
-            
-            
-            
-            
-            
-            
+  
         }
         .frame(maxHeight: .infinity, alignment: .top)
-        
-        
-        
+
     }
     
 }
@@ -422,12 +409,9 @@ struct RatingView: View {
     @State private var dragOffset: CGFloat = 0
     @State private var lastDragOffset: CGFloat = 0
     
-
     let maxVal: Int
     let minVal: Int
     let distPerIdent: CGFloat
-    
-    
     
     var body: some View {
         VStack {
