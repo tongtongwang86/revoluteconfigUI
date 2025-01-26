@@ -38,7 +38,7 @@ class BluetoothManager: NSObject, ObservableObject, CBCentralManagerDelegate, CB
             stopScanLoop()
 
             // Start a new timer that calls scanForConnectedDevices every 1 second
-            scanTimer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { [weak self] _ in
+            scanTimer = Timer.scheduledTimer(withTimeInterval: 10.0, repeats: true) { [weak self] _ in
                 self?.scanForConnectedDevices()
             }
         }

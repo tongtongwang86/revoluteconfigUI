@@ -18,7 +18,7 @@ struct BluetoothView: View {
                         ProgressView() // Spinner
                             .progressViewStyle(CircularProgressViewStyle())
                             .padding()
-                        Text("Make sure that Revolute is powered on")
+                        Text("Power on Revolute and triple press to enter pairing mode")
                             .font(.subheadline)
                             .foregroundColor(.gray)
                     }
