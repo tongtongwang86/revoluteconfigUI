@@ -1,0 +1,6927 @@
+[
+    {
+        "name": "HID_KEY_A",
+        "reportID": [0, 0, 0, 0, 0, 0, 0, 4],
+        "scope": "keyboard",
+        "description": "Keyboard key A"
+    },
+    {
+        "name": "HID_KEY_B",
+        "reportID": [0, 0, 0, 0, 0, 0, 0, 5],
+        "scope": "keyboard",
+        "description": "Keyboard key B"
+    },
+    {
+        "name": "HID_KEY_C",
+        "reportID": [0, 0, 0, 0, 0, 0, 0, 6],
+        "scope": "keyboard",
+        "description": "Keyboard key C"
+    },
+    {
+        "name": "HID_KEY_D",
+        "reportID": [0, 0, 0, 0, 0, 0, 0, 7],
+        "scope": "keyboard",
+        "description": "Keyboard key D"
+    },
+    {
+        "name": "HID_KEY_E",
+        "reportID": [0, 0, 0, 0, 0, 0, 0, 8],
+        "scope": "keyboard",
+        "description": "Keyboard key E"
+    },
+    {
+        "name": "HID_KEY_F",
+        "reportID": [0, 0, 0, 0, 0, 0, 0, 9],
+        "scope": "keyboard",
+        "description": "Keyboard key F"
+    },
+    {
+        "name": "HID_KEY_G",
+        "reportID": [0, 0, 0, 0, 0, 0, 0, 10],
+        "scope": "keyboard",
+        "description": "Keyboard key G"
+    },
+    {
+        "name": "HID_KEY_H",
+        "reportID": [0, 0, 0, 0, 0, 0, 0, 11],
+        "scope": "keyboard",
+        "description": "Keyboard key H"
+    },
+    {
+        "name": "HID_KEY_I",
+        "reportID": [0, 0, 0, 0, 0, 0, 0, 12],
+        "scope": "keyboard",
+        "description": "Keyboard key I"
+    },
+    {
+        "name": "HID_KEY_J",
+        "reportID": [0, 0, 0, 0, 0, 0, 0, 13],
+        "scope": "keyboard",
+        "description": "Keyboard key J"
+    },
+    {
+        "name": "HID_KEY_K",
+        "reportID": [0, 0, 0, 0, 0, 0, 0, 14],
+        "scope": "keyboard",
+        "description": "Keyboard key K"
+    },
+    {
+        "name": "HID_KEY_L",
+        "reportID": [0, 0, 0, 0, 0, 0, 0, 15],
+        "scope": "keyboard",
+        "description": "Keyboard key L"
+    },
+    {
+        "name": "HID_KEY_M",
+        "reportID": [0, 0, 0, 0, 0, 0, 0, 16],
+        "scope": "keyboard",
+        "description": "Keyboard key M"
+    },
+    {
+        "name": "HID_KEY_N",
+        "reportID": [0, 0, 0, 0, 0, 0, 0, 17],
+        "scope": "keyboard",
+        "description": "Keyboard key N"
+    },
+    {
+        "name": "HID_KEY_O",
+        "reportID": [0, 0, 0, 0, 0, 0, 0, 18],
+        "scope": "keyboard",
+        "description": "Keyboard key O"
+    },
+    {
+        "name": "HID_KEY_P",
+        "reportID": [0, 0, 0, 0, 0, 0, 0, 19],
+        "scope": "keyboard",
+        "description": "Keyboard key P"
+    },
+    {
+        "name": "HID_KEY_Q",
+        "reportID": [0, 0, 0, 0, 0, 0, 0, 20],
+        "scope": "keyboard",
+        "description": "Keyboard key Q"
+    },
+    {
+        "name": "HID_KEY_R",
+        "reportID": [0, 0, 0, 0, 0, 0, 0, 21],
+        "scope": "keyboard",
+        "description": "Keyboard key R"
+    },
+    {
+        "name": "HID_KEY_S",
+        "reportID": [0, 0, 0, 0, 0, 0, 0, 22],
+        "scope": "keyboard",
+        "description": "Keyboard key S"
+    },
+    {
+        "name": "HID_KEY_T",
+        "reportID": [0, 0, 0, 0, 0, 0, 0, 23],
+        "scope": "keyboard",
+        "description": "Keyboard key T"
+    },
+    {
+        "name": "HID_KEY_U",
+        "reportID": [0, 0, 0, 0, 0, 0, 0, 24],
+        "scope": "keyboard",
+        "description": "Keyboard key U"
+    },
+    {
+        "name": "HID_KEY_V",
+        "reportID": [0, 0, 0, 0, 0, 0, 0, 25],
+        "scope": "keyboard",
+        "description": "Keyboard key V"
+    },
+    {
+        "name": "HID_KEY_W",
+        "reportID": [0, 0, 0, 0, 0, 0, 0, 26],
+        "scope": "keyboard",
+        "description": "Keyboard key W"
+    },
+    {
+        "name": "HID_KEY_X",
+        "reportID": [0, 0, 0, 0, 0, 0, 0, 27],
+        "scope": "keyboard",
+        "description": "Keyboard key X"
+    },
+    {
+        "name": "HID_KEY_Y",
+        "reportID": [0, 0, 0, 0, 0, 0, 0, 28],
+        "scope": "keyboard",
+        "description": "Keyboard key Y"
+    },
+    {
+        "name": "HID_KEY_Z",
+        "reportID": [0, 0, 0, 0, 0, 0, 0, 29],
+        "scope": "keyboard",
+        "description": "Keyboard key Z"
+    },
+    {
+        "name": "Mouse X",
+        "reportID": [0, 1, 0, 0, 0, 0, 0, 0],
+        "scope": "mouse",
+        "description": "Mouse X axis movement"
+    },
+    {
+        "name": "Mouse Y",
+        "reportID": [0, 0, 1, 0, 0, 0, 0, 0],
+        "scope": "mouse",
+        "description": "Mouse Y axis movement"
+    },
+    {
+        "name": "Mouse Wheel",
+        "reportID": [0, 0, 0, 1, 0, 0, 0, 0],
+        "scope": "mouse",
+        "description": "Mouse Scroll Wheel"
+    },
+    
+    {
+        "name": "Left Click",
+        "reportID": [1, 0, 0, 0, 0, 0, 0, 0],
+        "scope": "mouse",
+        "description": "Mouse Primary Click"
+    },
+    {
+        "name": "Right Click",
+        "reportID": [2, 0, 0, 0, 0, 0, 0, 0],
+        "scope": "mouse",
+        "description": "Mouse Secondary Click"
+    },
+    {
+        "name": "Middle Click",
+        "reportID": [3, 0, 0, 0, 0, 0, 0, 0],
+        "scope": "mouse",
+        "description": "Mouse Middle Click"
+    },
+    {
+        "name": "Mouse Side button 1",
+        "reportID": [4, 0, 0, 0, 0, 0, 0, 0],
+        "scope": "mouse",
+        "description": "Mouse Side button 1"
+    },
+    
+    {
+        "name": "Mouse Side button 2",
+        "reportID": [5, 0, 0, 0, 0, 0, 0, 0],
+        "scope": "mouse",
+        "description": "Mouse Side button 2"
+    },
+    
+    {
+        "name": "Report 2",
+        "reportID": [0, 0, 0, 0, 0, 0, 0, 45],
+        "scope": "consumer",
+        "description": "This is a consumer report"
+    },
+    {
+        "name": "Report 3",
+        "reportID": [0, 0, 0, 0, 0, 0, 0, 92],
+        "scope": "mouse",
+        "description": "This is a mouse report"
+    },
+    {
+                "name": "NUMERIC_KEY_PAD",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard numeric key pad"
+            },
+            {
+                "name": "PROGRAMMABLE_BUTTONS",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard programmable buttons"
+            },
+            {
+                "name": "MICROPHONE",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard microphone"
+            },
+            {
+                "name": "HEADPHONE",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard headphone"
+            },
+            {
+                "name": "GRAPHIC_EQUALIZER",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard graphic equalizer"
+            },
+            {
+                "name": "INCREMENT10",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard increment10"
+            },
+            {
+                "name": "INCREMENT100",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard increment100"
+            },
+            {
+                "name": "AM_PM",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard am pm"
+            },
+            {
+                "name": "POWER",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard power"
+            },
+            {
+                "name": "RESET",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard reset"
+            },
+            {
+                "name": "SLEEP",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard sleep"
+            },
+            {
+                "name": "SLEEP_AFTER",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard sleep after"
+            },
+            {
+                "name": "SLEEP_MODE",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard sleep mode"
+            },
+            {
+                "name": "ILLUMINATION",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard illumination"
+            },
+            {
+                "name": "FUNCTION_BUTTONS",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard function buttons"
+            },
+            {
+                "name": "MENU",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard menu"
+            },
+            {
+                "name": "MENU_PICK",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard menu pick"
+            },
+            {
+                "name": "MENU_UP",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard menu up"
+            },
+            {
+                "name": "MENU_DOWN",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard menu down"
+            },
+            {
+                "name": "MENU_LEFT",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard menu left"
+            },
+            {
+                "name": "MENU_RIGHT",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard menu right"
+            },
+            {
+                "name": "MENU_ESCAPE",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard menu escape"
+            },
+            {
+                "name": "MENU_VALUE_INCREASE",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard menu value increase"
+            },
+            {
+                "name": "MENU_VALUE_DECREASE",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard menu value decrease"
+            },
+            {
+                "name": "DATA_ON_SCREEN",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard data on screen"
+            },
+            {
+                "name": "CLOSED_CAPTION",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard closed caption"
+            },
+            {
+                "name": "CLOSED_CAPTION_SELECT",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard closed caption select"
+            },
+            {
+                "name": "VCR_TV",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard vcr tv"
+            },
+            {
+                "name": "BROADCAST_MODE",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard broadcast mode"
+            },
+            {
+                "name": "SNAPSHOT",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard snapshot"
+            },
+            {
+                "name": "STILL",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard still"
+            },
+            {
+                "name": "PICTURE_IN_PICTURE_TOGGLE",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard picture in picture toggle"
+            },
+            {
+                "name": "PICTURE_IN_PICTURE_SWAP",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard picture in picture swap"
+            },
+            {
+                "name": "RED_MENU_BUTTON",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard red menu button"
+            },
+            {
+                "name": "GREEN_MENU_BUTTON",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard green menu button"
+            },
+            {
+                "name": "BLUE_MENU_BUTTON",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard blue menu button"
+            },
+            {
+                "name": "YELLOW_MENU_BUTTON",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard yellow menu button"
+            },
+            {
+                "name": "ASPECT",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard aspect"
+            },
+            {
+                "name": "3D_MODE_SELECT",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard 3d mode select"
+            },
+            {
+                "name": "DISPLAY_BRIGHTNESS_INCREMENT",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard display brightness increment"
+            },
+            {
+                "name": "DISPLAY_BRIGHTNESS_DECREMENT",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard display brightness decrement"
+            },
+            {
+                "name": "DISPLAY_BRIGHTNESS",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard display brightness"
+            },
+            {
+                "name": "DISPLAY_BACKLIGHT_TOGGLE",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard display backlight toggle"
+            },
+            {
+                "name": "DISPLAY_SET_BRIGHTNESS_TO_MINIMUM",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard display set brightness to minimum"
+            },
+            {
+                "name": "DISPLAY_SET_BRIGHTNESS_TO_MAXIMUM",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard display set brightness to maximum"
+            },
+            {
+                "name": "DISPLAY_SET_AUTO_BRIGHTNESS",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard display set auto brightness"
+            },
+            {
+                "name": "CAMERA_ACCESS_ENABLED",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard camera access enabled"
+            },
+            {
+                "name": "CAMERA_ACCESS_DISABLED",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard camera access disabled"
+            },
+            {
+                "name": "CAMERA_ACCESS_TOGGLE",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard camera access toggle"
+            },
+            {
+                "name": "KEYBOARD_BRIGHTNESS_INCREMENT",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard keyboard brightness increment"
+            },
+            {
+                "name": "KEYBOARD_BRIGHTNESS_DECREMENT",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard keyboard brightness decrement"
+            },
+            {
+                "name": "KEYBOARD_BACKLIGHT_SET_LEVEL",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard keyboard backlight set level"
+            },
+            {
+                "name": "KEYBOARD_BACKLIGHT_OOC",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard keyboard backlight ooc"
+            },
+            {
+                "name": "KEYBOARD_BACKLIGHT_SET_MINIMUM",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard keyboard backlight set minimum"
+            },
+            {
+                "name": "KEYBOARD_BACKLIGHT_SET_MAXIMUM",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard keyboard backlight set maximum"
+            },
+            {
+                "name": "KEYBOARD_BACKLIGHT_AUTO",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard keyboard backlight auto"
+            },
+            {
+                "name": "SELECTION",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard selection"
+            },
+            {
+                "name": "ASSIGN_SELECTION",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard assign selection"
+            },
+            {
+                "name": "MODE_STEP",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard mode step"
+            },
+            {
+                "name": "RECALL_LAST",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard recall last"
+            },
+            {
+                "name": "ENTER_CHANNEL",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard enter channel"
+            },
+            {
+                "name": "ORDER_MOVIE",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard order movie"
+            },
+            {
+                "name": "CHANNEL",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard channel"
+            },
+            {
+                "name": "MEDIA_SELECTION",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard media selection"
+            },
+            {
+                "name": "MEDIA_SELECT_COMPUTER",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard media select computer"
+            },
+            {
+                "name": "MEDIA_SELECT_TV",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard media select tv"
+            },
+            {
+                "name": "MEDIA_SELECT_WWW",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard media select www"
+            },
+            {
+                "name": "MEDIA_SELECT_DVD",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard media select dvd"
+            },
+            {
+                "name": "MEDIA_SELECT_TELEPHONE",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard media select telephone"
+            },
+            {
+                "name": "MEDIA_SELECT_PROGRAM_GUIDE",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard media select program guide"
+            },
+            {
+                "name": "MEDIA_SELECT_VIDEO_PHONE",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard media select video phone"
+            },
+            {
+                "name": "MEDIA_SELECT_GAMES",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard media select games"
+            },
+            {
+                "name": "MEDIA_SELECT_MESSAGES",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard media select messages"
+            },
+            {
+                "name": "MEDIA_SELECT_CD",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard media select cd"
+            },
+            {
+                "name": "MEDIA_SELECT_VCR",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard media select vcr"
+            },
+            {
+                "name": "MEDIA_SELECT_TUNER",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard media select tuner"
+            },
+            {
+                "name": "QUIT",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard quit"
+            },
+            {
+                "name": "HELP",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard help"
+            },
+            {
+                "name": "MEDIA_SELECT_TAPE",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard media select tape"
+            },
+            {
+                "name": "MEDIA_SELECT_CABLE",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard media select cable"
+            },
+            {
+                "name": "MEDIA_SELECT_SATELLITE",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard media select satellite"
+            },
+            {
+                "name": "MEDIA_SELECT_SECURITY",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard media select security"
+            },
+            {
+                "name": "MEDIA_SELECT_HOME",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard media select home"
+            },
+            {
+                "name": "MEDIA_SELECT_CALL",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard media select call"
+            },
+            {
+                "name": "CHANNEL_INCREMENT",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard channel increment"
+            },
+            {
+                "name": "CHANNEL_DECREMENT",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard channel decrement"
+            },
+            {
+                "name": "MEDIA_SELECT_SAP",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard media select sap"
+            },
+            {
+                "name": "VCR_PLUS",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard vcr plus"
+            },
+            {
+                "name": "ONCE",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard once"
+            },
+            {
+                "name": "DAILY",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard daily"
+            },
+            {
+                "name": "WEEKLY",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard weekly"
+            },
+            {
+                "name": "MONTHLY",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard monthly"
+            },
+            {
+                "name": "PLAY",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard play"
+            },
+            {
+                "name": "PAUSE",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard pause"
+            },
+            {
+                "name": "RECORD",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard record"
+            },
+            {
+                "name": "FAST_FORWARD",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard fast forward"
+            },
+            {
+                "name": "REWIND",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard rewind"
+            },
+            {
+                "name": "SCAN_NEXT_TRACK",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard scan next track"
+            },
+            {
+                "name": "SCAN_PREVIOUS_TRACK",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard scan previous track"
+            },
+            {
+                "name": "STOP",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard stop"
+            },
+            {
+                "name": "EJECT",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard eject"
+            },
+            {
+                "name": "RANDOM_PLAY",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard random play"
+            },
+            {
+                "name": "SELECT_DISC",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard select disc"
+            },
+            {
+                "name": "ENTER_DISC",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard enter disc"
+            },
+            {
+                "name": "REPEAT",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard repeat"
+            },
+            {
+                "name": "TRACKING",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard tracking"
+            },
+            {
+                "name": "TRACK_NORMAL",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard track normal"
+            },
+            {
+                "name": "SLOW_TRACKING",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard slow tracking"
+            },
+            {
+                "name": "FRAME_FORWARD",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard frame forward"
+            },
+            {
+                "name": "FRAME_BACK",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard frame back"
+            },
+            {
+                "name": "MARK",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard mark"
+            },
+            {
+                "name": "CLEAR_MARK",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard clear mark"
+            },
+            {
+                "name": "REPEAT_FROM_MARK",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard repeat from mark"
+            },
+            {
+                "name": "RETURN_TO_MARK",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard return to mark"
+            },
+            {
+                "name": "SEARCH_MARK_FORWARD",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard search mark forward"
+            },
+            {
+                "name": "SEARCH_MARK_BACKWARDS",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard search mark backwards"
+            },
+            {
+                "name": "COUNTER_RESET",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard counter reset"
+            },
+            {
+                "name": "SHOW_COUNTER",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard show counter"
+            },
+            {
+                "name": "TRACKING_INCREMENT",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard tracking increment"
+            },
+            {
+                "name": "TRACKING_DECREMENT",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard tracking decrement"
+            },
+            {
+                "name": "STOP_EJECT",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard stop eject"
+            },
+            {
+                "name": "PLAY_PAUSE",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard play pause"
+            },
+            {
+                "name": "PLAY_SKIP",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard play skip"
+            },
+            {
+                "name": "VOICE_COMMAND",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard voice command"
+            },
+            {
+                "name": "INVOKE_CAPTURE_INTERFACE",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard invoke capture interface"
+            },
+            {
+                "name": "START_OR_STOP_GAME_RECORDING",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard start or stop game recording"
+            },
+            {
+                "name": "HISTORICAL_GAME_CAPTURE",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard historical game capture"
+            },
+            {
+                "name": "CAPTURE_GAME_SCREENSHOT",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard capture game screenshot"
+            },
+            {
+                "name": "SHOW_OR_HIDE_RECORDING_INDICATOR",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard show or hide recording indicator"
+            },
+            {
+                "name": "START_OR_STOP_MICROPHONE_CAPTURE",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard start or stop microphone capture"
+            },
+            {
+                "name": "START_OR_STOP_CAMERA_CAPTURE",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard start or stop camera capture"
+            },
+            {
+                "name": "START_OR_STOP_GAME_BROADCAST",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard start or stop game broadcast"
+            },
+            {
+                "name": "VOLUME",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard volume"
+            },
+            {
+                "name": "BALANCE",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard balance"
+            },
+            {
+                "name": "MUTE",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard mute"
+            },
+            {
+                "name": "BASS",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard bass"
+            },
+            {
+                "name": "TREBLE",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard treble"
+            },
+            {
+                "name": "BASS_BOOST",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard bass boost"
+            },
+            {
+                "name": "SURROUND_MODE",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard surround mode"
+            },
+            {
+                "name": "LOUDNESS",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard loudness"
+            },
+            {
+                "name": "MPX",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard mpx"
+            },
+            {
+                "name": "VOLUME_INCREMENT",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard volume increment"
+            },
+            {
+                "name": "VOLUME_DECREMENT",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard volume decrement"
+            },
+            {
+                "name": "SPEED_SELECT",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard speed select"
+            },
+            {
+                "name": "PLAYBACK_SPEED",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard playback speed"
+            },
+            {
+                "name": "STANDARD_PLAY",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard standard play"
+            },
+            {
+                "name": "LONG_PLAY",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard long play"
+            },
+            {
+                "name": "EXTENDED_PLAY",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard extended play"
+            },
+            {
+                "name": "SLOW",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard slow"
+            },
+            {
+                "name": "FAN_ENABLE",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard fan enable"
+            },
+            {
+                "name": "FAN_SPEED",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard fan speed"
+            },
+            {
+                "name": "LIGHT_ENABLE",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard light enable"
+            },
+            {
+                "name": "LIGHT_ILLUMINATION_LEVEL",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard light illumination level"
+            },
+            {
+                "name": "CLIMATE_CONTROL_ENABLE",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard climate control enable"
+            },
+            {
+                "name": "ROOM_TEMPERATURE",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard room temperature"
+            },
+            {
+                "name": "SECURITY_ENABLE",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard security enable"
+            },
+            {
+                "name": "FIRE_ALARM",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard fire alarm"
+            },
+            {
+                "name": "POLICE_ALARM",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard police alarm"
+            },
+            {
+                "name": "PROXIMITY",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard proximity"
+            },
+            {
+                "name": "MOTION",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard motion"
+            },
+            {
+                "name": "DURESS_ALARM",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard duress alarm"
+            },
+            {
+                "name": "HOLDUP_ALARM",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard holdup alarm"
+            },
+            {
+                "name": "MEDICAL_ALARM",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard medical alarm"
+            },
+            {
+                "name": "BALANCE_RIGHT",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard balance right"
+            },
+            {
+                "name": "BALANCE_LEFT",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard balance left"
+            },
+            {
+                "name": "BASS_INCREMENT",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard bass increment"
+            },
+            {
+                "name": "BASS_DECREMENT",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard bass decrement"
+            },
+            {
+                "name": "TREBLE_INCREMENT",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard treble increment"
+            },
+            {
+                "name": "TREBLE_DECREMENT",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard treble decrement"
+            },
+            {
+                "name": "SPEAKER_SYSTEM",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard speaker system"
+            },
+            {
+                "name": "CHANNEL_LEFT",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard channel left"
+            },
+            {
+                "name": "CHANNEL_RIGHT",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard channel right"
+            },
+            {
+                "name": "CHANNEL_CENTER",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard channel center"
+            },
+            {
+                "name": "CHANNEL_FRONT",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard channel front"
+            },
+            {
+                "name": "CHANNEL_CENTER_FRONT",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard channel center front"
+            },
+            {
+                "name": "CHANNEL_SIDE",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard channel side"
+            },
+            {
+                "name": "CHANNEL_SURROUND",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard channel surround"
+            },
+            {
+                "name": "CHANNEL_LOW_FREQUENCY_ENHANCEMENT",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard channel low frequency enhancement"
+            },
+            {
+                "name": "CHANNEL_TOP",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard channel top"
+            },
+            {
+                "name": "CHANNEL_UNKNOWN",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard channel unknown"
+            },
+            {
+                "name": "SUB_CHANNEL",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard sub channel"
+            },
+            {
+                "name": "SUB_CHANNEL_INCREMENT",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard sub channel increment"
+            },
+            {
+                "name": "SUB_CHANNEL_DECREMENT",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard sub channel decrement"
+            },
+            {
+                "name": "ALTERNATE_AUDIO_INCREMENT",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard alternate audio increment"
+            },
+            {
+                "name": "ALTERNATE_AUDIO_DECREMENT",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard alternate audio decrement"
+            },
+            {
+                "name": "APPLICATION_LAUNCH_BUTTONS",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard application launch buttons"
+            },
+            {
+                "name": "AL_LAUNCH_BUTTON_CONFIGURATION_TOOL",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard al launch button configuration tool"
+            },
+            {
+                "name": "AL_PROGRAMMABLE_BUTTON_CONFIGURATION",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard al programmable button configuration"
+            },
+            {
+                "name": "AL_CONSUMER_CONTROL_CONFIGURATION",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard al consumer control configuration"
+            },
+            {
+                "name": "AL_WORD_PROCESSOR",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard al word processor"
+            },
+            {
+                "name": "AL_TEXT_EDITOR",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard al text editor"
+            },
+            {
+                "name": "AL_SPREADSHEET",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard al spreadsheet"
+            },
+            {
+                "name": "AL_GRAPHICS_EDITOR",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard al graphics editor"
+            },
+            {
+                "name": "AL_PRESENTATION_APP",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard al presentation app"
+            },
+            {
+                "name": "AL_DATABASE_APP",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard al database app"
+            },
+            {
+                "name": "AL_EMAIL_READER",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard al email reader"
+            },
+            {
+                "name": "AL_NEWSREADER",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard al newsreader"
+            },
+            {
+                "name": "AL_VOICEMAIL",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard al voicemail"
+            },
+            {
+                "name": "AL_CONTACTS_ADDRESS_BOOK",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard al contacts address book"
+            },
+            {
+                "name": "AL_CALENDAR_SCHEDULE",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard al calendar schedule"
+            },
+            {
+                "name": "AL_TASK_PROJECT_MANAGER",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard al task project manager"
+            },
+            {
+                "name": "AL_LOG_JOURNAL_TIMECARD",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard al log journal timecard"
+            },
+            {
+                "name": "AL_CHECKBOOK_FINANCE",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard al checkbook finance"
+            },
+            {
+                "name": "AL_CALCULATOR",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard al calculator"
+            },
+            {
+                "name": "AL_A_V_CAPTURE_PLAYBACK",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard al a v capture playback"
+            },
+            {
+                "name": "AL_LOCAL_MACHINE_BROWSER",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard al local machine browser"
+            },
+            {
+                "name": "AL_LAN_WAN_BROWSER",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard al lan wan browser"
+            },
+            {
+                "name": "AL_INTERNET_BROWSER",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard al internet browser"
+            },
+            {
+                "name": "AL_REMOTE_NETWORKING_ISP_CONNECT",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard al remote networking isp connect"
+            },
+            {
+                "name": "AL_NETWORK_CONFERENCE",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard al network conference"
+            },
+            {
+                "name": "AL_NETWORK_CHAT",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard al network chat"
+            },
+            {
+                "name": "AL_TELEPHONY_DIALER",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard al telephony dialer"
+            },
+            {
+                "name": "AL_LOGON",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard al logon"
+            },
+            {
+                "name": "AL_LOGOFF",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard al logoff"
+            },
+            {
+                "name": "AL_LOGON_LOGOFF",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard al logon logoff"
+            },
+            {
+                "name": "AL_TERMINAL_LOCK_SCREENSAVER",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard al terminal lock screensaver"
+            },
+            {
+                "name": "AL_CONTROL_PANEL",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard al control panel"
+            },
+            {
+                "name": "AL_COMMAND_LINE_PROCESSOR_RUN",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard al command line processor run"
+            },
+            {
+                "name": "AL_PROCESS_TASK_MANAGER",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard al process task manager"
+            },
+            {
+                "name": "AL_SELECT_TASK_APPLICATION",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard al select task application"
+            },
+            {
+                "name": "AL_NEXT_TASK_APPLICATION",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard al next task application"
+            },
+            {
+                "name": "AL_PREVIOUS_TASK_APPLICATION",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard al previous task application"
+            },
+            {
+                "name": "AL_PREEMPTIVE_HALT_TASK_APPLICATION",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard al preemptive halt task application"
+            },
+            {
+                "name": "AL_INTEGRATED_HELP_CENTER",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard al integrated help center"
+            },
+            {
+                "name": "AL_DOCUMENTS",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard al documents"
+            },
+            {
+                "name": "AL_THESAURUS",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard al thesaurus"
+            },
+            {
+                "name": "AL_DICTIONARY",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard al dictionary"
+            },
+            {
+                "name": "AL_DESKTOP",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard al desktop"
+            },
+            {
+                "name": "AL_SPELL_CHECK",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard al spell check"
+            },
+            {
+                "name": "AL_GRAMMAR_CHECK",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard al grammar check"
+            },
+            {
+                "name": "AL_WIRELESS_STATUS",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard al wireless status"
+            },
+            {
+                "name": "AL_KEYBOARD_LAYOUT",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard al keyboard layout"
+            },
+            {
+                "name": "AL_VIRUS_PROTECTION",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard al virus protection"
+            },
+            {
+                "name": "AL_ENCRYPTION",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard al encryption"
+            },
+            {
+                "name": "AL_SCREEN_SAVER",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard al screen saver"
+            },
+            {
+                "name": "AL_ALARMS",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard al alarms"
+            },
+            {
+                "name": "AL_CLOCK",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard al clock"
+            },
+            {
+                "name": "AL_FILE_BROWSER",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard al file browser"
+            },
+            {
+                "name": "AL_POWER_STATUS",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard al power status"
+            },
+            {
+                "name": "AL_IMAGE_BROWSER",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard al image browser"
+            },
+            {
+                "name": "AL_AUDIO_BROWSER",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard al audio browser"
+            },
+            {
+                "name": "AL_MOVIE_BROWSER",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard al movie browser"
+            },
+            {
+                "name": "AL_DIGITAL_RIGHTS_MANAGER",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard al digital rights manager"
+            },
+            {
+                "name": "AL_DIGITAL_WALLET",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard al digital wallet"
+            },
+            {
+                "name": "AL_INSTANT_MESSAGING",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard al instant messaging"
+            },
+            {
+                "name": "AL_OEM_FEATURES_TIPS_TUTORIAL_BROWSER",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard al oem features tips tutorial browser"
+            },
+            {
+                "name": "AL_OEM_HELP",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard al oem help"
+            },
+            {
+                "name": "AL_ONLINE_COMMUNITY",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard al online community"
+            },
+            {
+                "name": "AL_ENTERTAINMENT_CONTENT_BROWSER",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard al entertainment content browser"
+            },
+            {
+                "name": "AL_ONLINE_SHOPPING_BROWSER",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard al online shopping browser"
+            },
+            {
+                "name": "AL_SMARTCARD_INFORMATION_HELP",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard al smartcard information help"
+            },
+            {
+                "name": "AL_MARKET_MONITOR_FINANCE_BROWSER",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard al market monitor finance browser"
+            },
+            {
+                "name": "AL_CUSTOMIZED_CORPORATE_NEWS_BROWSER",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard al customized corporate news browser"
+            },
+            {
+                "name": "AL_ONLINE_ACTIVITY_BROWSER",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard al online activity browser"
+            },
+            {
+                "name": "AL_RESEARCH_SEARCH_BROWSER",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard al research search browser"
+            },
+            {
+                "name": "AL_AUDIO_PLAYER",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard al audio player"
+            },
+            {
+                "name": "AL_MESSAGE_STATUS",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard al message status"
+            },
+            {
+                "name": "AL_CONTACT_SYNC",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard al contact sync"
+            },
+            {
+                "name": "AL_NAVIGATION",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard al navigation"
+            },
+            {
+                "name": "AL_CONTEXT_AWARE_DESKTOP_ASSISTANT",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard al context aware desktop assistant"
+            },
+            {
+                "name": "GENERIC_GUI_APPLICATION_CONTROLS",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard generic gui application controls"
+            },
+            {
+                "name": "AC_NEW",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard ac new"
+            },
+            {
+                "name": "AC_OPEN",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard ac open"
+            },
+            {
+                "name": "AC_CLOSE",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard ac close"
+            },
+            {
+                "name": "AC_EXIT",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard ac exit"
+            },
+            {
+                "name": "AC_MAXIMIZE",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard ac maximize"
+            },
+            {
+                "name": "AC_MINIMIZE",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard ac minimize"
+            },
+            {
+                "name": "AC_SAVE",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard ac save"
+            },
+            {
+                "name": "AC_PRINT",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard ac print"
+            },
+            {
+                "name": "AC_PROPERTIES",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard ac properties"
+            },
+            {
+                "name": "AC_UNDO",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard ac undo"
+            },
+            {
+                "name": "AC_COPY",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard ac copy"
+            },
+            {
+                "name": "AC_CUT",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard ac cut"
+            },
+            {
+                "name": "AC_PASTE",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard ac paste"
+            },
+            {
+                "name": "AC_SELECT_ALL",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard ac select all"
+            },
+            {
+                "name": "AC_FIND",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard ac find"
+            },
+            {
+                "name": "AC_FIND_AND_REPLACE",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard ac find and replace"
+            },
+            {
+                "name": "AC_SEARCH",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard ac search"
+            },
+            {
+                "name": "AC_GO_TO",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard ac go to"
+            },
+            {
+                "name": "AC_HOME",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard ac home"
+            },
+            {
+                "name": "AC_BACK",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard ac back"
+            },
+            {
+                "name": "AC_FORWARD",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard ac forward"
+            },
+            {
+                "name": "AC_STOP",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard ac stop"
+            },
+            {
+                "name": "AC_REFRESH",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard ac refresh"
+            },
+            {
+                "name": "AC_PREVIOUS_LINK",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard ac previous link"
+            },
+            {
+                "name": "AC_NEXT_LINK",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard ac next link"
+            },
+            {
+                "name": "AC_BOOKMARKS",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard ac bookmarks"
+            },
+            {
+                "name": "AC_HISTORY",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard ac history"
+            },
+            {
+                "name": "AC_SUBSCRIPTIONS",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard ac subscriptions"
+            },
+            {
+                "name": "AC_ZOOM_IN",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard ac zoom in"
+            },
+            {
+                "name": "AC_ZOOM_OUT",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard ac zoom out"
+            },
+            {
+                "name": "AC_ZOOM",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard ac zoom"
+            },
+            {
+                "name": "AC_FULL_SCREEN_VIEW",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard ac full screen view"
+            },
+            {
+                "name": "AC_NORMAL_VIEW",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard ac normal view"
+            },
+            {
+                "name": "AC_VIEW_TOGGLE",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard ac view toggle"
+            },
+            {
+                "name": "AC_SCROLL_UP",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard ac scroll up"
+            },
+            {
+                "name": "AC_SCROLL_DOWN",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard ac scroll down"
+            },
+            {
+                "name": "AC_SCROLL",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard ac scroll"
+            },
+            {
+                "name": "AC_PAN_LEFT",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard ac pan left"
+            },
+            {
+                "name": "AC_PAN_RIGHT",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard ac pan right"
+            },
+            {
+                "name": "AC_PAN",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard ac pan"
+            },
+            {
+                "name": "AC_NEW_WINDOW",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard ac new window"
+            },
+            {
+                "name": "AC_TILE_HORIZONTALLY",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard ac tile horizontally"
+            },
+            {
+                "name": "AC_TILE_VERTICALLY",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard ac tile vertically"
+            },
+            {
+                "name": "AC_FORMAT",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard ac format"
+            },
+            {
+                "name": "AC_EDIT",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard ac edit"
+            },
+            {
+                "name": "AC_BOLD",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard ac bold"
+            },
+            {
+                "name": "AC_ITALICS",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard ac italics"
+            },
+            {
+                "name": "AC_UNDERLINE",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard ac underline"
+            },
+            {
+                "name": "AC_STRIKETHROUGH",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard ac strikethrough"
+            },
+            {
+                "name": "AC_SUBSCRIPT",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard ac subscript"
+            },
+            {
+                "name": "AC_SUPERSCRIPT",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard ac superscript"
+            },
+            {
+                "name": "AC_ALL_CAPS",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard ac all caps"
+            },
+            {
+                "name": "AC_ROTATE",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard ac rotate"
+            },
+            {
+                "name": "AC_RESIZE",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard ac resize"
+            },
+            {
+                "name": "AC_FLIP_HORIZONTAL",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard ac flip horizontal"
+            },
+            {
+                "name": "AC_FLIP_VERTICAL",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard ac flip vertical"
+            },
+            {
+                "name": "AC_MIRROR_HORIZONTAL",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard ac mirror horizontal"
+            },
+            {
+                "name": "AC_MIRROR_VERTICAL",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard ac mirror vertical"
+            },
+            {
+                "name": "AC_FONT_SELECT",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard ac font select"
+            },
+            {
+                "name": "AC_FONT_COLOR",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard ac font color"
+            },
+            {
+                "name": "AC_FONT_SIZE",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard ac font size"
+            },
+            {
+                "name": "AC_JUSTIFY_LEFT",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard ac justify left"
+            },
+            {
+                "name": "AC_JUSTIFY_CENTER_H",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard ac justify center h"
+            },
+            {
+                "name": "AC_JUSTIFY_RIGHT",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard ac justify right"
+            },
+            {
+                "name": "AC_JUSTIFY_BLOCK_H",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard ac justify block h"
+            },
+            {
+                "name": "AC_JUSTIFY_TOP",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard ac justify top"
+            },
+            {
+                "name": "AC_JUSTIFY_CENTER_V",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard ac justify center v"
+            },
+            {
+                "name": "AC_JUSTIFY_BOTTOM",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard ac justify bottom"
+            },
+            {
+                "name": "AC_JUSTIFY_BLOCK_V",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard ac justify block v"
+            },
+            {
+                "name": "AC_INDENT_DECREASE",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard ac indent decrease"
+            },
+            {
+                "name": "AC_INDENT_INCREASE",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard ac indent increase"
+            },
+            {
+                "name": "AC_NUMBERED_LIST",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard ac numbered list"
+            },
+            {
+                "name": "AC_RESTART_NUMBERING",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard ac restart numbering"
+            },
+            {
+                "name": "AC_BULLETED_LIST",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard ac bulleted list"
+            },
+            {
+                "name": "AC_PROMOTE",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard ac promote"
+            },
+            {
+                "name": "AC_DEMOTE",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard ac demote"
+            },
+            {
+                "name": "AC_YES",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard ac yes"
+            },
+            {
+                "name": "AC_NO",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard ac no"
+            },
+            {
+                "name": "AC_CANCEL",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard ac cancel"
+            },
+            {
+                "name": "AC_CATALOG",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard ac catalog"
+            },
+            {
+                "name": "AC_BUY_CHECKOUT",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard ac buy checkout"
+            },
+            {
+                "name": "AC_ADD_TO_CART",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard ac add to cart"
+            },
+            {
+                "name": "AC_EXPAND",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard ac expand"
+            },
+            {
+                "name": "AC_EXPAND_ALL",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard ac expand all"
+            },
+            {
+                "name": "AC_COLLAPSE",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard ac collapse"
+            },
+            {
+                "name": "AC_COLLAPSE_ALL",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard ac collapse all"
+            },
+            {
+                "name": "AC_PRINT_PREVIEW",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard ac print preview"
+            },
+            {
+                "name": "AC_PASTE_SPECIAL",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard ac paste special"
+            },
+            {
+                "name": "AC_INSERT_MODE",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard ac insert mode"
+            },
+            {
+                "name": "AC_DELETE",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard ac delete"
+            },
+            {
+                "name": "AC_LOCK",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard ac lock"
+            },
+            {
+                "name": "AC_UNLOCK",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard ac unlock"
+            },
+            {
+                "name": "AC_PROTECT",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard ac protect"
+            },
+            {
+                "name": "AC_UNPROTECT",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard ac unprotect"
+            },
+            {
+                "name": "AC_ATTACH_COMMENT",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard ac attach comment"
+            },
+            {
+                "name": "AC_DELETE_COMMENT",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard ac delete comment"
+            },
+            {
+                "name": "AC_VIEW_COMMENT",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard ac view comment"
+            },
+            {
+                "name": "AC_SELECT_WORD",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard ac select word"
+            },
+            {
+                "name": "AC_SELECT_SENTENCE",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard ac select sentence"
+            },
+            {
+                "name": "AC_SELECT_PARAGRAPH",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard ac select paragraph"
+            },
+            {
+                "name": "AC_SELECT_COLUMN",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard ac select column"
+            },
+            {
+                "name": "AC_SELECT_ROW",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard ac select row"
+            },
+            {
+                "name": "AC_SELECT_TABLE",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard ac select table"
+            },
+            {
+                "name": "AC_SELECT_OBJECT",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard ac select object"
+            },
+            {
+                "name": "AC_REDO_REPEAT",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard ac redo repeat"
+            },
+            {
+                "name": "AC_SORT",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard ac sort"
+            },
+            {
+                "name": "AC_SORT_ASCENDING",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard ac sort ascending"
+            },
+            {
+                "name": "AC_SORT_DESCENDING",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard ac sort descending"
+            },
+            {
+                "name": "AC_FILTER",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard ac filter"
+            },
+            {
+                "name": "AC_SET_CLOCK",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard ac set clock"
+            },
+            {
+                "name": "AC_VIEW_CLOCK",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard ac view clock"
+            },
+            {
+                "name": "AC_SELECT_TIME_ZONE",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard ac select time zone"
+            },
+            {
+                "name": "AC_EDIT_TIME_ZONES",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard ac edit time zones"
+            },
+            {
+                "name": "AC_SET_ALARM",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard ac set alarm"
+            },
+            {
+                "name": "AC_CLEAR_ALARM",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard ac clear alarm"
+            },
+            {
+                "name": "AC_SNOOZE_ALARM",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard ac snooze alarm"
+            },
+            {
+                "name": "AC_RESET_ALARM",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard ac reset alarm"
+            },
+            {
+                "name": "AC_SYNCHRONIZE",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard ac synchronize"
+            },
+            {
+                "name": "AC_SEND_RECEIVE",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard ac send receive"
+            },
+            {
+                "name": "AC_SEND_TO",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard ac send to"
+            },
+            {
+                "name": "AC_REPLY",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard ac reply"
+            },
+            {
+                "name": "AC_REPLY_ALL",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard ac reply all"
+            },
+            {
+                "name": "AC_FORWARD_MSG",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard ac forward msg"
+            },
+            {
+                "name": "AC_SEND",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard ac send"
+            },
+            {
+                "name": "AC_ATTACH_FILE",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard ac attach file"
+            },
+            {
+                "name": "AC_UPLOAD",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard ac upload"
+            },
+            {
+                "name": "AC_DOWNLOAD_SAVE_TARGET_AS",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard ac download save target as"
+            },
+            {
+                "name": "AC_SET_BORDERS",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard ac set borders"
+            },
+            {
+                "name": "AC_INSERT_ROW",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard ac insert row"
+            },
+            {
+                "name": "AC_INSERT_COLUMN",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard ac insert column"
+            },
+            {
+                "name": "AC_INSERT_FILE",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard ac insert file"
+            },
+            {
+                "name": "AC_INSERT_PICTURE",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard ac insert picture"
+            },
+            {
+                "name": "AC_INSERT_OBJECT",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard ac insert object"
+            },
+            {
+                "name": "AC_INSERT_SYMBOL",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard ac insert symbol"
+            },
+            {
+                "name": "AC_SAVE_AND_CLOSE",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard ac save and close"
+            },
+            {
+                "name": "AC_RENAME",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard ac rename"
+            },
+            {
+                "name": "AC_MERGE",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard ac merge"
+            },
+            {
+                "name": "AC_SPLIT",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard ac split"
+            },
+            {
+                "name": "AC_DISTRIBUTE_HORIZONTALLY",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard ac distribute horizontally"
+            },
+            {
+                "name": "AC_DISTRIBUTE_VERTICALLY",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard ac distribute vertically"
+            },
+            {
+                "name": "AC_NEXT_KEYBOARD_LAYOUT_SELECT",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard ac next keyboard layout select"
+            },
+            {
+                "name": "AC_NAVIGATION_GUIDANCE",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard ac navigation guidance"
+            },
+            {
+                "name": "AC_DESKTOP_SHOW_ALL_WINDOWS",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard ac desktop show all windows"
+            },
+            {
+                "name": "AC_SOFT_KEY_LEFT",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard ac soft key left"
+            },
+            {
+                "name": "AC_SOFT_KEY_RIGHT",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard ac soft key right"
+            },
+            {
+                "name": "AC_DESKTOP_SHOW_ALL_APPLICATIONS",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard ac desktop show all applications"
+            },
+            {
+                "name": "AC_IDLE_KEEP_ALIVE",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard ac idle keep alive"
+            },
+            {
+                "name": "EXTENDED_KEYBOARD_ATTRIBUTES_COLLECTION",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard extended keyboard attributes collection"
+            },
+            {
+                "name": "KEYBOARD_FORM_FACTOR",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard keyboard form factor"
+            },
+            {
+                "name": "KEYBOARD_KEY_TYPE",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard keyboard key type"
+            },
+            {
+                "name": "KEYBOARD_PHYSICAL_LAYOUT",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard keyboard physical layout"
+            },
+            {
+                "name": "VENDOR_SPECIFIC_KEYBOARD_PHYSICAL_LAYOUT",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard vendor specific keyboard physical layout"
+            },
+            {
+                "name": "KEYBOARD_IETF_LANGUAGE_TAG_INDEX",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard keyboard ietf language tag index"
+            },
+            {
+                "name": "IMPLEMENTED_KEYBOARD_INPUT_ASSIST_CONTROLS",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard implemented keyboard input assist controls"
+            },
+            {
+                "name": "KEYBOARD_INPUT_ASSIST_PREVIOUS",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard keyboard input assist previous"
+            },
+            {
+                "name": "KEYBOARD_INPUT_ASSIST_NEXT",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard keyboard input assist next"
+            },
+            {
+                "name": "KEYBOARD_INPUT_ASSIST_PREVIOUS_GROUP",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard keyboard input assist previous group"
+            },
+            {
+                "name": "KEYBOARD_INPUT_ASSIST_NEXT_GROUP",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard keyboard input assist next group"
+            },
+            {
+                "name": "KEYBOARD_INPUT_ASSIST_ACCEPT",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard keyboard input assist accept"
+            },
+            {
+                "name": "KEYBOARD_INPUT_ASSIST_CANCEL",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard keyboard input assist cancel"
+            },
+            {
+                "name": "PRIVACY_SCREEN_TOGGLE",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard privacy screen toggle"
+            },
+            {
+                "name": "PRIVACY_SCREEN_LEVEL_DECREMENT",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard privacy screen level decrement"
+            },
+            {
+                "name": "PRIVACY_SCREEN_LEVEL_INCREMENT",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard privacy screen level increment"
+            },
+            {
+                "name": "PRIVACY_SCREEN_LEVEL_MINIMUM",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard privacy screen level minimum"
+            },
+            {
+                "name": "PRIVACY_SCREEN_LEVEL_MAXIMUM",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard privacy screen level maximum"
+            },
+            {
+                "name": "CONTACT_EDITED",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard contact edited"
+            },
+            {
+                "name": "CONTACT_ADDED",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard contact added"
+            },
+            {
+                "name": "CONTACT_RECORD_ACTIVE",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard contact record active"
+            },
+            {
+                "name": "CONTACT_INDEX",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard contact index"
+            },
+            {
+                "name": "CONTACT_NICKNAME",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard contact nickname"
+            },
+            {
+                "name": "CONTACT_FIRST_NAME",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard contact first name"
+            },
+            {
+                "name": "CONTACT_LAST_NAME",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard contact last name"
+            },
+            {
+                "name": "CONTACT_FULL_NAME",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard contact full name"
+            },
+            {
+                "name": "CONTACT_PHONE_NUMBER_PERSONAL",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard contact phone number personal"
+            },
+            {
+                "name": "CONTACT_PHONE_NUMBER_BUSINESS",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard contact phone number business"
+            },
+            {
+                "name": "CONTACT_PHONE_NUMBER_MOBILE",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard contact phone number mobile"
+            },
+            {
+                "name": "CONTACT_PHONE_NUMBER_PAGER",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard contact phone number pager"
+            },
+            {
+                "name": "CONTACT_PHONE_NUMBER_FAX",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard contact phone number fax"
+            },
+            {
+                "name": "CONTACT_PHONE_NUMBER_OTHER",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard contact phone number other"
+            },
+            {
+                "name": "CONTACT_EMAIL_PERSONAL",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard contact email personal"
+            },
+            {
+                "name": "CONTACT_EMAIL_BUSINESS",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard contact email business"
+            },
+            {
+                "name": "CONTACT_EMAIL_OTHER",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard contact email other"
+            },
+            {
+                "name": "CONTACT_EMAIL_MAIN",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard contact email main"
+            },
+            {
+                "name": "CONTACT_SPEED_DIAL_NUMBER",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard contact speed dial number"
+            },
+            {
+                "name": "CONTACT_STATUS_FLAG",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard contact status flag"
+            },
+            {
+                "name": "CONTACT_MISC",
+                "reportID": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    10
+                ],
+                "scope": "consumer",
+                "description": "Keyboard contact misc"
+            }
+
+]
