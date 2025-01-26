@@ -12,11 +12,12 @@
 //
 //  Created by Tong tong Wang on 1/26/25.
 //
-
+import UniformTypeIdentifiers
 import SwiftUI
 import CoreBluetooth
 import Combine
 import iOSMcuManagerLibrary
+
 
 struct SettingsView: View {
     @ObservedObject var bluetoothManager: BluetoothManager
@@ -29,6 +30,7 @@ struct SettingsView: View {
                 .font(.title)
                 .padding()
             
+            // Select Firmware Button
             Button(action: { isDocumentPickerPresented = true }) {
                 Text("Select Firmware File")
                     .padding()
@@ -39,6 +41,21 @@ struct SettingsView: View {
             }
             .padding()
             
+            // Display Selected Firmware File
+            if let selectedFirmwareURL = selectedFirmwareURL {
+                VStack(alignment: .leading) {
+                    Text("Selected Firmware:")
+                        .font(.subheadline)
+                        .foregroundColor(.gray)
+                    Text(selectedFirmwareURL.lastPathComponent)
+                        .font(.headline)
+                        .lineLimit(1)
+                        .truncationMode(.middle)
+                }
+                .padding()
+            }
+            
+            // Upload Firmware Button
             Button(action: {
                 bluetoothManager.startFirmwareUpgrade(with: selectedFirmwareURL)
             }) {
@@ -52,12 +69,14 @@ struct SettingsView: View {
             .disabled(selectedFirmwareURL == nil || bluetoothManager.selectedPeripheral == nil)
             .padding()
             
+            // Firmware Upgrade Status
             if !bluetoothManager.firmwareUpgradeState.isEmpty {
                 Text("Status: \(bluetoothManager.firmwareUpgradeState)")
                     .font(.subheadline)
                     .padding()
             }
             
+            // Firmware Upload Progress
             if bluetoothManager.firmwareUpgradeProgress > 0 {
                 ProgressView(value: bluetoothManager.firmwareUpgradeProgress, total: 100)
                     .padding()
@@ -65,6 +84,7 @@ struct SettingsView: View {
                     .font(.subheadline)
             }
             
+            // Firmware Upload Speed
             if !bluetoothManager.firmwareUploadSpeed.isEmpty {
                 Text("Speed: \(bluetoothManager.firmwareUploadSpeed)")
                     .font(.subheadline)
@@ -85,8 +105,13 @@ struct DocumentPicker: UIViewControllerRepresentable {
     @Binding var selectedURL: URL?
 
     func makeUIViewController(context: Context) -> UIDocumentPickerViewController {
-        let picker = UIDocumentPickerViewController(forOpeningContentTypes: [.data])
+        // Define the UTType for .bin files
+        let binType = UTType(filenameExtension: "bin")!
+        
+        // Create the document picker with the .bin file type
+        let picker = UIDocumentPickerViewController(forOpeningContentTypes: [binType], asCopy: true)
         picker.delegate = context.coordinator
+        picker.allowsMultipleSelection = false // Allow only one file to be selected
         return picker
     }
 
@@ -104,7 +129,9 @@ struct DocumentPicker: UIViewControllerRepresentable {
         }
 
         func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
-            parent.selectedURL = urls.first
+            if let url = urls.first, url.pathExtension.lowercased() == "bin" {
+                parent.selectedURL = url
+            }
         }
     }
 }

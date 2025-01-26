@@ -19,19 +19,16 @@ struct testContentView: View {
             // Bluetooth View (Default Tab)
             BluetoothView(bluetoothManager: bluetoothManager)
                 .tabItem {
-                    Label("Devices", systemImage: "antenna.radiowaves.left.and.right")
+                    Label(
+                        bluetoothManager.selectedPeripheral != nil ? "Connected - \(bluetoothManager.selectedPeripheral?.name ?? "Device")" : "Connect Now",
+                        systemImage: "antenna.radiowaves.left.and.right"
+                    )
                 }
             
             // Configuration View
             ConfigurationView(bluetoothManager: bluetoothManager)
                 .tabItem {
                     Label("Configuration", systemImage: "gear")
-                }
-            
-            // Settings View
-            SettingsView(bluetoothManager: bluetoothManager)
-                .tabItem {
-                    Label("Settings", systemImage: "slider.horizontal.3")
                 }
         }
     }
