@@ -19,14 +19,35 @@ class BluetoothManager: NSObject, ObservableObject, CBCentralManagerDelegate, CB
     @Published var firmwareUpgradeProgress: Double = 0
     @Published var firmwareUploadSpeed: String = ""
     private var uploadTimestamp: Date = Date()
-     private var uploadImageSize: Int?
-     private var initialBytes: Int = 0
-     private var totalBytesUploaded: Int = 0
+    private var uploadImageSize: Int?
+    private var initialBytes: Int = 0
+    private var totalBytesUploaded: Int = 0
+    
+    // Timer for scan loop
+    private var scanTimer: Timer?
+
     
     override init() {
         super.init()
         centralManager = CBCentralManager(delegate: self, queue: nil)
     }
+    
+    
+    func startScanLoop() {
+            // Invalidate any existing timer
+            stopScanLoop()
+
+            // Start a new timer that calls scanForConnectedDevices every 1 second
+            scanTimer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { [weak self] _ in
+                self?.scanForConnectedDevices()
+            }
+        }
+
+        func stopScanLoop() {
+            // Invalidate the timer to stop the loop
+            scanTimer?.invalidate()
+            scanTimer = nil
+        }
     
     func scanForConnectedDevices() {
         // Retrieve peripherals already connected to the system that advertise the specified service UUID
