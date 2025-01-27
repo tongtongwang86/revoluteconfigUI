@@ -3,6 +3,7 @@ import SwiftUI
 struct BluetoothView: View {
     @ObservedObject var bluetoothManager: BluetoothManager
     @State private var showSettings = false
+    @State private var showConnectionFailedAlert = false
 
     var body: some View {
         NavigationStack {
@@ -103,6 +104,19 @@ struct BluetoothView: View {
             }
             .onDisappear {
                 bluetoothManager.stopScanLoop() // Stop the scan loop when the view disappears
+            }
+            .onChange(of: bluetoothManager.connectionFailed) { newValue in
+                if newValue {
+                    showConnectionFailedAlert = true
+                }
+            }
+            .alert("Unable to connect, Try entering pairing mode by triple pressing Revolute.", isPresented: $showConnectionFailedAlert) {
+                Button("OK", role: .cancel) {
+                    // Reset the connectionFailed state
+                    bluetoothManager.connectionFailed = false
+                }
+            } message: {
+                Text("The connection to the device timed out. Please try again.")
             }
         }
     }
