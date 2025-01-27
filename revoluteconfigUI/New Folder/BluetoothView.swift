@@ -4,6 +4,7 @@ struct BluetoothView: View {
     @ObservedObject var bluetoothManager: BluetoothManager
     @State private var showSettings = false
     @State private var showConnectionFailedAlert = false
+    @State private var showBluetoothUnavailableAlert = false
 
     var body: some View {
         NavigationStack {
@@ -77,12 +78,24 @@ struct BluetoothView: View {
                     // Spinner and Text as the last item in the list
                     Section {
                         VStack {
-                            ProgressView() // Spinner
-                                .progressViewStyle(CircularProgressViewStyle())
-                                .padding()
-                            Text("Press Revolute once to power on. If revolute is already on, press three times to enter pairing mode")
-                                .font(.subheadline)
-                                .foregroundColor(.gray)
+                            if bluetoothManager.isBluetoothUnavailable {
+                                // Show a cross and text when Bluetooth is unavailable
+                                Image(systemName: "xmark.circle.fill")
+                                    .font(.system(size: 40))
+                                    .foregroundColor(.red)
+                                    .padding()
+                                Text("Enable Bluetooth to start scanning")
+                                    .font(.subheadline)
+                                    .foregroundColor(.gray)
+                            } else {
+                                // Show spinner and original text when Bluetooth is available
+                                ProgressView() // Spinner
+                                    .progressViewStyle(CircularProgressViewStyle())
+                                    .padding()
+                                Text("Press Revolute once to power on. If revolute is already on, press three times to enter pairing mode")
+                                    .font(.subheadline)
+                                    .foregroundColor(.gray)
+                            }
                         }
                         .frame(maxWidth: .infinity, maxHeight: .infinity)
                         .listRowBackground(Color.clear) // Make the background transparent
@@ -110,14 +123,20 @@ struct BluetoothView: View {
                     showConnectionFailedAlert = true
                 }
             }
-            .alert("Unable to connect, Try entering pairing mode by triple pressing Revolute.", isPresented: $showConnectionFailedAlert) {
+            .onChange(of: bluetoothManager.isBluetoothUnavailable) { newValue in
+                if newValue {
+                    showBluetoothUnavailableAlert = true
+                }
+            }
+            .alert("Connection Failed", isPresented: $showConnectionFailedAlert) {
                 Button("OK", role: .cancel) {
                     // Reset the connectionFailed state
                     bluetoothManager.connectionFailed = false
                 }
             } message: {
-                Text("The connection to the device timed out. Please try again.")
+                Text("Try entering pairing mode by triple pressing Revolute.")
             }
+           
         }
     }
 }
